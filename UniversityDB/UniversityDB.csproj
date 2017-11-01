@@ -159,7 +159,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CreateEditForms\CreateEditTeacher.resx">
       <DependentUpon>CreateEditTeacher.cs</DependentUpon>
-
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateEditForms\CreateEditHuman.resx">
       <DependentUpon>CreateEditHuman.cs</DependentUpon>
     </EmbeddedResource>
