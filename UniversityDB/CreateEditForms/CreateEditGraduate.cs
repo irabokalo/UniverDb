@@ -1,20 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using System;
 using System.Windows.Forms;
+using University.DAL.Models;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace UniversityDB.CreateEditForms
 {
-  public partial class CreateEditGraduate : Form
-  {
-    public CreateEditGraduate()
+    public partial class CreateEditGraduate
     {
-      InitializeComponent();
+        public GraduateViewModel Value;
+
+        public CreateEditGraduate() : base()
+        {
+            InitializeComponent();
+           
+
+
+        
+        }
+
     }
-  }
 }

@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace UniversityDB.CreateEditForms
 {
-  public partial class CreateEditStudent : Form
-  {
-    public CreateEditStudent()
+    public partial class CreateEditStudent : Form
     {
-      InitializeComponent();
+        public CreateEditStudent()
+        {
+            InitializeComponent();
+        }
     }
-  }
 }

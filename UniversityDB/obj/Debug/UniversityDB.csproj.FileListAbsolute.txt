@@ -33,7 +33,6 @@ C:\Users\Iryna.Bokalo\Documents\111\UniversityDB\bin\Debug\EntityFramework.xml
 C:\Users\Iryna.Bokalo\Documents\111\UniversityDB\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Iryna.Bokalo\Documents\111\UniversityDB\bin\Debug\AutoMapper.xml
 C:\Users\Iryna.Bokalo\Documents\111\UniversityDB\obj\Debug\UniversityDB.csprojResolveAssemblyReference.cache
-C:\Users\Iryna.Bokalo\Documents\111\UniversityDB\obj\Debug\UniversityDB.CreateEditForms.CreateEditHuman.resources
 C:\Users\Iryna.Bokalo\Documents\111\UniversityDB\obj\Debug\UniversityDB.CreateEditForms.CreateEditUniversityObj.resources
 C:\Users\Iryna.Bokalo\Documents\111\UniversityDB\obj\Debug\UniversityDB.Main.resources
 C:\Users\Iryna.Bokalo\Documents\111\UniversityDB\obj\Debug\UniversityDB.Properties.Resources.resources
@@ -42,3 +41,9 @@ C:\Users\Iryna.Bokalo\Documents\111\UniversityDB\obj\Debug\UniversityDB.csproj.C
 C:\Users\Iryna.Bokalo\Documents\111\UniversityDB\obj\Debug\UniversityDB.exe
 C:\Users\Iryna.Bokalo\Documents\111\UniversityDB\obj\Debug\UniversityDB.pdb
 C:\Users\Iryna.Bokalo\Documents\111\UniversityDB\obj\Debug\UniversityDB.Select.resources
+C:\Users\Iryna.Bokalo\Documents\111\UniversityDB\obj\Debug\UniversityDB.CreateEditForms.CreateEditEntrant.resources
+C:\Users\Iryna.Bokalo\Documents\111\UniversityDB\obj\Debug\UniversityDB.CreateEditForms.CreateEditExcellentStudent.resources
+C:\Users\Iryna.Bokalo\Documents\111\UniversityDB\obj\Debug\UniversityDB.CreateEditForms.CreateEditGraduate.resources
+C:\Users\Iryna.Bokalo\Documents\111\UniversityDB\obj\Debug\UniversityDB.CreateEditForms.CreateEditHumanForm.resources
+C:\Users\Iryna.Bokalo\Documents\111\UniversityDB\obj\Debug\UniversityDB.CreateEditForms.CreateEditStudent.resources
+C:\Users\Iryna.Bokalo\Documents\111\UniversityDB\obj\Debug\UniversityDB.CreateEditForms.CreateEditTeacher.resources
