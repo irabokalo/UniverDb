@@ -144,6 +144,14 @@ namespace UniversityDB
            
         }
 
+        private void add_Click(object sender, EventArgs e)
+        {
+            Select window = new Select(GetTypesOfEntities("root"));
+            if (window.ShowDialog() == DialogResult.OK)
+            {
+                Create(window.SelectedType, null);
+            }
+        }
     }
 
 

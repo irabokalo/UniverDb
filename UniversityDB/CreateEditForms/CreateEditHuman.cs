@@ -11,93 +11,93 @@ using University.DAL.Models;
 
 namespace UniversityDB.CreateEditForms
 {
-    public partial class CreateEditHuman : Form
+    public partial class CreateEditHuman : CreateEditUniversityObj
     {
         public new HumanViewModel Value;
 
 
-        //public CreateEditHuman()
-        //{
-        //    InitializeComponent();
-        //    AddEvents();
+        public CreateEditHuman()
+        {
+            InitializeComponent();
+            AddEvents();
 
-        //    Text = "Create Person";
-        //    btnOk.Enabled = Verify_Person();
-        //}
+            Text = "Create Person";
+            okBtn.Enabled = Verify_Person();
+        }
 
-        //public CreateEditHuman(HumanViewModel person) : base(person)
-        //{
-        //    InitializeComponent();
-        //    AddEvents();
+        public CreateEditHuman(HumanViewModel person)
+        {
+            InitializeComponent();
+            AddEvents();
 
-        //    Value = person;
-        //    ShowInfo();
+            Value = person;
+            ShowInfo();
 
-        //    Text = "Edit Person";
-        //    okBtn.Enabled = Verify_Person();
-        //}
+            Text = "Edit Person";
+            okBtn.Enabled = Verify_Person();
+        }
 
-        //private void AddEvents()
-        //{
-        //    // UObject
-        //    textBox1.TextChanged -= SomethingChanged_UObject;
-        //    txtForTitle.TextChanged += SomethingChanged_Person;
+        private void AddEvents()
+        {
+            // UObject
+            textBox1.TextChanged -= SomethingChanged_UObject;
+            textBox1.TextChanged += SomethingChanged_Person;
 
-        //    // Person
-        //    datePickerForBirthday.ValueChanged += SomethingChanged_Person;
-        //    txtForName.TextChanged += SomethingChanged_Person;
-        //    txtForSurname.TextChanged += SomethingChanged_Person;
-        //    txtForPatronymic.TextChanged += SomethingChanged_Person;
+            // Person
+            name.TextChanged += SomethingChanged_Person;
+            Surname.TextChanged += SomethingChanged_Person;
+            textBox2.TextChanged += SomethingChanged_Person;
 
-        //    // btnOk
-        //    btnOk.Click -= btnOk_Click_UObject;
-        //    btnOk.Click += btnOk_Click_Person;
-        //}
 
-        //protected void SomethingChanged_Person(object sender, EventArgs e)
-        //{
-        //    btnOk.Enabled = Verify_Person();
-        //}
+            // btnOk
+            okBtn.Click -= btnOk_Click_UObject;
+            okBtn.Click += btnOk_Click_Person;
+        }
 
-        //protected bool Verify_Person()
-        //{
-        //    return Verify_UObject() &&
-        //        txtForName.Text.Length > 0 &&
-        //        txtForSurname.Text.Length > 0 &&
-        //        txtForPatronymic.Text.Length > 0;
-        //}
+        protected void SomethingChanged_Person(object sender, EventArgs e)
+        {
+            okBtn.Enabled = Verify_Person();
+        }
 
-        //protected void btnOk_Click_Person(object sender, EventArgs e)
-        //{
-        //    if (Value == null)
-        //    {
-        //        Value = new Person();
-        //    }
+        protected bool Verify_Person()
+        {
+            return Verify_UObject() &&
+                name.Text.Length > 0 &&
+                Surname.Text.Length > 0 &&
+                textBox2.Text.Length > 0;
+        }
 
-        //    FillObject(Value);
+        protected void btnOk_Click_Person(object sender, EventArgs e)
+        {
+            if (Value == null)
+            {
+                Value = new HumanViewModel();
+            }
 
-        //    Close();
-        //}
+            FillObject(Value);
 
-        //private void ShowInfo()
-        //{
-        //    txtForName.Text = Value.Name;
-        //    txtForSurname.Text = Value.Surname;
-        //    txtForPatronymic.Text = Value.Patronymic;
-        //    datePickerForBirthday.Value = Value.Birthday;
-        //    radioForGender_Female.Checked = !(radioForGender_Male.Checked = Value.Gender);
-        //}
+            Close();
+        }
 
-        //protected void FillObject(Person person)
-        //{
-        //    base.FillObject(person);
+        private void ShowInfo()
+        {
+            name.Text = Value.Name;
+            Surname.Text = Value.Surname;
+            textBox2.Text =  Value.Age.ToString();
+        }
 
-        //    person.Name = txtForName.Text;
-        //    person.Surname = txtForSurname.Text;
-        //    person.Patronymic = txtForPatronymic.Text;
-        //    person.Birthday = datePickerForBirthday.Value;
-        //    person.Gender = radioForGender_Male.Checked;
-        //}
+        protected void FillObject(HumanViewModel person)
+        {
+            base.FillObject(person);
 
+            person.Name = name.Text;
+            person.Surname = Surname.Text;
+            person.Age = Int32.Parse(textBox2.Text);
+        }
+
+        private void okBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

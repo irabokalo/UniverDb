@@ -135,7 +135,7 @@
             // Title
             // 
             this.Title.AutoSize = true;
-            this.Title.Location = new System.Drawing.Point(22, 30);
+            this.Title.Location = new System.Drawing.Point(6, 26);
             this.Title.Name = "Title";
             this.Title.Size = new System.Drawing.Size(27, 13);
             this.Title.TabIndex = 1;
@@ -143,7 +143,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(71, 23);
+            this.textBox1.Location = new System.Drawing.Point(64, 23);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 0;
@@ -156,6 +156,7 @@
             this.okBtn.TabIndex = 7;
             this.okBtn.Text = "Ok";
             this.okBtn.UseVisualStyleBackColor = true;
+            this.okBtn.Click += new System.EventHandler(this.okBtn_Click);
             // 
             // cancelBtn
             // 

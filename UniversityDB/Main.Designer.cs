@@ -34,7 +34,7 @@
             // 
             // tree
             // 
-            this.tree.Location = new System.Drawing.Point(112, 26);
+            this.tree.Location = new System.Drawing.Point(105, 26);
             this.tree.Name = "tree";
             this.tree.Size = new System.Drawing.Size(477, 355);
             this.tree.TabIndex = 0;
@@ -47,13 +47,13 @@
             this.add.TabIndex = 2;
             this.add.Text = "Add new object";
             this.add.UseVisualStyleBackColor = true;
-          
+            this.add.Click += new System.EventHandler(this.add_Click);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(707, 565);
+            this.ClientSize = new System.Drawing.Size(688, 488);
             this.Controls.Add(this.add);
             this.Controls.Add(this.tree);
             this.Name = "Main";
