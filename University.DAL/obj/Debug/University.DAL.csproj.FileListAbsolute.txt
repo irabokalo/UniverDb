@@ -1,0 +1,12 @@
+C:\Users\Iryna.Bokalo\Downloads\Telegram Desktop\UniversityDB\University.DAL\obj\Debug\University.DAL.csproj.CoreCompileInputs.cache
+C:\Users\Iryna.Bokalo\Downloads\Telegram Desktop\UniversityDB\University.DAL\bin\Debug\University.DAL.exe.config
+C:\Users\Iryna.Bokalo\Downloads\Telegram Desktop\UniversityDB\University.DAL\bin\Debug\University.DAL.exe
+C:\Users\Iryna.Bokalo\Downloads\Telegram Desktop\UniversityDB\University.DAL\bin\Debug\University.DAL.pdb
+C:\Users\Iryna.Bokalo\Downloads\Telegram Desktop\UniversityDB\University.DAL\bin\Debug\EntityFramework.dll
+C:\Users\Iryna.Bokalo\Downloads\Telegram Desktop\UniversityDB\University.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Iryna.Bokalo\Downloads\Telegram Desktop\UniversityDB\University.DAL\bin\Debug\EntityFramework.xml
+C:\Users\Iryna.Bokalo\Downloads\Telegram Desktop\UniversityDB\University.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Iryna.Bokalo\Downloads\Telegram Desktop\UniversityDB\University.DAL\obj\Debug\University.DAL.exe
+C:\Users\Iryna.Bokalo\Downloads\Telegram Desktop\UniversityDB\University.DAL\obj\Debug\University.DAL.pdb
+C:\Users\Iryna.Bokalo\Downloads\Telegram Desktop\UniversityDB\University.DAL\bin\Debug\AutoMapper.dll
+C:\Users\Iryna.Bokalo\Downloads\Telegram Desktop\UniversityDB\University.DAL\bin\Debug\AutoMapper.xml

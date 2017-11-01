@@ -55,14 +55,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="CreateEditForms\CreateEditHuman.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="CreateEditForms\CreateEditHuman.Designer.cs">
+      <DependentUpon>CreateEditHuman.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateEditForms\CreateEditUniversityObj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateEditForms\CreateEditUniversityObj.Designer.cs">
+      <DependentUpon>CreateEditUniversityObj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CreateEditForms\CreateEditHuman.resx">
+      <DependentUpon>CreateEditHuman.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateEditForms\CreateEditUniversityObj.resx">
+      <DependentUpon>CreateEditUniversityObj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -85,6 +106,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\University.DAL\University.DAL.csproj">
+      <Project>{6966cc86-eab1-4c1c-9e83-f5de8d554476}</Project>
+      <Name>University.DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

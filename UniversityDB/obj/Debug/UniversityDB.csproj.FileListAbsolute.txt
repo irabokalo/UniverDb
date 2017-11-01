@@ -1,1 +1,22 @@
 c:\users\irabokalo\documents\visual studio 2015\Projects\UniversityDB\UniversityDB\bin\Debug\UniversityDB.exe.config
+C:\Users\Iryna.Bokalo\Downloads\Telegram Desktop\UniversityDB\UniversityDB\obj\Debug\UniversityDB.csprojResolveAssemblyReference.cache
+C:\Users\Iryna.Bokalo\Downloads\Telegram Desktop\UniversityDB\UniversityDB\obj\Debug\UniversityDB.CreateEditForms.CreateEditHuman.resources
+C:\Users\Iryna.Bokalo\Downloads\Telegram Desktop\UniversityDB\UniversityDB\obj\Debug\UniversityDB.CreateEditForms.CreateEditUniversityObj.resources
+C:\Users\Iryna.Bokalo\Downloads\Telegram Desktop\UniversityDB\UniversityDB\obj\Debug\UniversityDB.Main.resources
+C:\Users\Iryna.Bokalo\Downloads\Telegram Desktop\UniversityDB\UniversityDB\obj\Debug\UniversityDB.Properties.Resources.resources
+C:\Users\Iryna.Bokalo\Downloads\Telegram Desktop\UniversityDB\UniversityDB\obj\Debug\UniversityDB.csproj.GenerateResource.Cache
+C:\Users\Iryna.Bokalo\Downloads\Telegram Desktop\UniversityDB\UniversityDB\obj\Debug\UniversityDB.csproj.CoreCompileInputs.cache
+C:\Users\Iryna.Bokalo\Downloads\Telegram Desktop\UniversityDB\UniversityDB\bin\Debug\UniversityDB.exe.config
+C:\Users\Iryna.Bokalo\Downloads\Telegram Desktop\UniversityDB\UniversityDB\bin\Debug\UniversityDB.exe
+C:\Users\Iryna.Bokalo\Downloads\Telegram Desktop\UniversityDB\UniversityDB\bin\Debug\UniversityDB.pdb
+C:\Users\Iryna.Bokalo\Downloads\Telegram Desktop\UniversityDB\UniversityDB\bin\Debug\EntityFramework.dll
+C:\Users\Iryna.Bokalo\Downloads\Telegram Desktop\UniversityDB\UniversityDB\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Iryna.Bokalo\Downloads\Telegram Desktop\UniversityDB\UniversityDB\bin\Debug\University.DAL.exe
+C:\Users\Iryna.Bokalo\Downloads\Telegram Desktop\UniversityDB\UniversityDB\bin\Debug\AutoMapper.dll
+C:\Users\Iryna.Bokalo\Downloads\Telegram Desktop\UniversityDB\UniversityDB\bin\Debug\University.DAL.pdb
+C:\Users\Iryna.Bokalo\Downloads\Telegram Desktop\UniversityDB\UniversityDB\bin\Debug\University.DAL.exe.config
+C:\Users\Iryna.Bokalo\Downloads\Telegram Desktop\UniversityDB\UniversityDB\bin\Debug\EntityFramework.xml
+C:\Users\Iryna.Bokalo\Downloads\Telegram Desktop\UniversityDB\UniversityDB\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Iryna.Bokalo\Downloads\Telegram Desktop\UniversityDB\UniversityDB\bin\Debug\AutoMapper.xml
+C:\Users\Iryna.Bokalo\Downloads\Telegram Desktop\UniversityDB\UniversityDB\obj\Debug\UniversityDB.exe
+C:\Users\Iryna.Bokalo\Downloads\Telegram Desktop\UniversityDB\UniversityDB\obj\Debug\UniversityDB.pdb

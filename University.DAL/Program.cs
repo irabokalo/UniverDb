@@ -10,6 +10,10 @@ namespace University.DAL
     {
         static void Main(string[] args)
         {
+            using (var ctx = new UniversityDbContext())
+            {
+                ctx.SaveChanges();
+            }
         }
     }
 }

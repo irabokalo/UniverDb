@@ -33,7 +33,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.1.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -43,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutoMapperConfig.cs" />
     <Compile Include="Models\Entrant.cs" />
     <Compile Include="Models\ExcellentStudent.cs" />
     <Compile Include="Models\Graduate.cs" />
@@ -57,10 +68,24 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UniversityDbContext.cs" />
+    <Compile Include="UniversityRepository.cs" />
+    <Compile Include="ViewModels\EntrantViewModel.cs" />
+    <Compile Include="ViewModels\ExcellentStudentViewModel.cs" />
+    <Compile Include="ViewModels\GraduateViewModel.cs" />
+    <Compile Include="ViewModels\HumanViewModel.cs" />
+    <Compile Include="ViewModels\LectureViewModel.cs" />
+    <Compile Include="ViewModels\PairViewModel.cs" />
+    <Compile Include="ViewModels\PracticeViewModel.cs" />
+    <Compile Include="ViewModels\StudentViewModel.cs" />
+    <Compile Include="ViewModels\SubjectViewModel.cs" />
+    <Compile Include="ViewModels\TeacherViewModel.cs" />
+    <Compile Include="ViewModels\UniversityObjectViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
