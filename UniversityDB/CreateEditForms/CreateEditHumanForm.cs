@@ -7,23 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using University.DAL.Models;
 
 namespace UniversityDB.CreateEditForms
 {
-  public partial class CreateEditTeacher : Form
-  {
-    public CreateEditTeacher()
+    public partial class CreateEditHumanForm : Form
     {
-      InitializeComponent();
-    }
+        HumanViewModel Value;
+        public CreateEditHumanForm()
+        {
+            InitializeComponent();
+
+        }
 
         private void okButton_Click(object sender, EventArgs e)
         {
-            //if(tabControl1.SelectedTab.Name == 1)
+            if (tabControl1.SelectedTab.Name ==  "tabPageUniversity")
+            {
 
-            //{
-            //}
-
+            }
         }
     }
 }

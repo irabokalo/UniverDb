@@ -118,7 +118,17 @@ namespace UniversityDB
                         title = uObjWindow.Value.TypeName;
                     }
                     break;
-                   
+                case "University Object":
+                    CreateEditUniversityObj uObjWindow = new CreateEditUniversityObj();
+                    if (uObjWindow.ShowDialog() == DialogResult.OK)
+                    {
+                        uObjWindow.Value.MajorId = majorId;
+                        _repo.CreateUniversityObject(uObjWindow.Value);
+                        id = uObjWindow.Value.Id;
+                        title = uObjWindow.Value.TypeName;
+                    }
+                    break;
+
             }
 
             if (id != 0)
@@ -147,10 +157,9 @@ namespace UniversityDB
         private void add_Click(object sender, EventArgs e)
         {
             Select window = new Select(GetTypesOfEntities("root"));
-            if (window.ShowDialog() == DialogResult.OK)
-            {
+            window.ShowDialog();
                 Create(window.SelectedType, null);
-            }
+            
         }
     }
 

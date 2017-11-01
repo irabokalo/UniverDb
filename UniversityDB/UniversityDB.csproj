@@ -55,11 +55,39 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CreateEditForms\CreateEditHuman.cs">
+    <Compile Include="CreateEditForms\CreateEditEntrant.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreateEditForms\CreateEditHuman.Designer.cs">
-      <DependentUpon>CreateEditHuman.cs</DependentUpon>
+    <Compile Include="CreateEditForms\CreateEditEntrant.Designer.cs">
+      <DependentUpon>CreateEditEntrant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateEditForms\CreateEditExcellentStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateEditForms\CreateEditExcellentStudent.Designer.cs">
+      <DependentUpon>CreateEditExcellentStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateEditForms\CreateEditGraduate.cs" />
+    <Compile Include="CreateEditForms\CreateEditGraduate.Designer.cs">
+      <DependentUpon>CreateEditGraduate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateEditForms\CreateEditHumanForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateEditForms\CreateEditHumanForm.Designer.cs">
+      <DependentUpon>CreateEditHumanForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateEditForms\CreateEditStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateEditForms\CreateEditStudent.Designer.cs">
+      <DependentUpon>CreateEditStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateEditForms\CreateEditTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateEditForms\CreateEditTeacher.Designer.cs">
+      <DependentUpon>CreateEditTeacher.cs</DependentUpon>
     </Compile>
     <Compile Include="CreateEditForms\CreateEditUniversityObj.cs">
       <SubType>Form</SubType>
@@ -81,8 +109,23 @@
     <Compile Include="Select.Designer.cs">
       <DependentUpon>Select.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CreateEditForms\CreateEditHuman.resx">
-      <DependentUpon>CreateEditHuman.cs</DependentUpon>
+    <EmbeddedResource Include="CreateEditForms\CreateEditEntrant.resx">
+      <DependentUpon>CreateEditEntrant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateEditForms\CreateEditExcellentStudent.resx">
+      <DependentUpon>CreateEditExcellentStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateEditForms\CreateEditGraduate.resx">
+      <DependentUpon>CreateEditGraduate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateEditForms\CreateEditHumanForm.resx">
+      <DependentUpon>CreateEditHumanForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateEditForms\CreateEditStudent.resx">
+      <DependentUpon>CreateEditStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateEditForms\CreateEditTeacher.resx">
+      <DependentUpon>CreateEditTeacher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreateEditForms\CreateEditUniversityObj.resx">
       <DependentUpon>CreateEditUniversityObj.cs</DependentUpon>
@@ -114,7 +157,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\University.DAL\University.DAL.csproj">
