@@ -33,17 +33,17 @@
       this.tabControl1 = new System.Windows.Forms.TabControl();
       this.tabPageUniversity = new System.Windows.Forms.TabPage();
       this.title = new System.Windows.Forms.TextBox();
-      this.label4 = new System.Windows.Forms.Label();
+      this.titleLabel = new System.Windows.Forms.Label();
       this.tabPageHuman = new System.Windows.Forms.TabPage();
-      this.label1 = new System.Windows.Forms.Label();
+      this.nameLabel = new System.Windows.Forms.Label();
       this.age = new System.Windows.Forms.TextBox();
-      this.label2 = new System.Windows.Forms.Label();
+      this.surnameLabel = new System.Windows.Forms.Label();
       this.surname = new System.Windows.Forms.TextBox();
-      this.label3 = new System.Windows.Forms.Label();
+      this.ageLabel = new System.Windows.Forms.Label();
       this.name = new System.Windows.Forms.TextBox();
       this.tabPageEntrant = new System.Windows.Forms.TabPage();
-      this.label5 = new System.Windows.Forms.Label();
-      this.label6 = new System.Windows.Forms.Label();
+      this.desiredFacultyLabel = new System.Windows.Forms.Label();
+      this.schoolLabel = new System.Windows.Forms.Label();
       this.school = new System.Windows.Forms.TextBox();
       this.desiredFaculty = new System.Windows.Forms.TextBox();
       this.tabControl1.SuspendLayout();
@@ -84,7 +84,7 @@
       // tabPageUniversity
       // 
       this.tabPageUniversity.Controls.Add(this.title);
-      this.tabPageUniversity.Controls.Add(this.label4);
+      this.tabPageUniversity.Controls.Add(this.titleLabel);
       this.tabPageUniversity.Location = new System.Drawing.Point(4, 22);
       this.tabPageUniversity.Name = "tabPageUniversity";
       this.tabPageUniversity.Padding = new System.Windows.Forms.Padding(3);
@@ -100,22 +100,22 @@
       this.title.Size = new System.Drawing.Size(127, 20);
       this.title.TabIndex = 13;
       // 
-      // label4
+      // titleLabel
       // 
-      this.label4.AutoSize = true;
-      this.label4.Location = new System.Drawing.Point(33, 42);
-      this.label4.Name = "label4";
-      this.label4.Size = new System.Drawing.Size(30, 13);
-      this.label4.TabIndex = 12;
-      this.label4.Text = "Title:";
+      this.titleLabel.AutoSize = true;
+      this.titleLabel.Location = new System.Drawing.Point(33, 42);
+      this.titleLabel.Name = "titleLabel";
+      this.titleLabel.Size = new System.Drawing.Size(30, 13);
+      this.titleLabel.TabIndex = 12;
+      this.titleLabel.Text = "Title:";
       // 
       // tabPageHuman
       // 
-      this.tabPageHuman.Controls.Add(this.label1);
+      this.tabPageHuman.Controls.Add(this.nameLabel);
       this.tabPageHuman.Controls.Add(this.age);
-      this.tabPageHuman.Controls.Add(this.label2);
+      this.tabPageHuman.Controls.Add(this.surnameLabel);
       this.tabPageHuman.Controls.Add(this.surname);
-      this.tabPageHuman.Controls.Add(this.label3);
+      this.tabPageHuman.Controls.Add(this.ageLabel);
       this.tabPageHuman.Controls.Add(this.name);
       this.tabPageHuman.Location = new System.Drawing.Point(4, 22);
       this.tabPageHuman.Name = "tabPageHuman";
@@ -125,14 +125,14 @@
       this.tabPageHuman.Text = "Human";
       this.tabPageHuman.UseVisualStyleBackColor = true;
       // 
-      // label1
+      // nameLabel
       // 
-      this.label1.AutoSize = true;
-      this.label1.Location = new System.Drawing.Point(37, 32);
-      this.label1.Name = "label1";
-      this.label1.Size = new System.Drawing.Size(35, 13);
-      this.label1.TabIndex = 12;
-      this.label1.Text = "Name";
+      this.nameLabel.AutoSize = true;
+      this.nameLabel.Location = new System.Drawing.Point(37, 32);
+      this.nameLabel.Name = "nameLabel";
+      this.nameLabel.Size = new System.Drawing.Size(35, 13);
+      this.nameLabel.TabIndex = 12;
+      this.nameLabel.Text = "Name";
       // 
       // age
       // 
@@ -141,14 +141,14 @@
       this.age.Size = new System.Drawing.Size(100, 20);
       this.age.TabIndex = 17;
       // 
-      // label2
+      // surnameLabel
       // 
-      this.label2.AutoSize = true;
-      this.label2.Location = new System.Drawing.Point(37, 70);
-      this.label2.Name = "label2";
-      this.label2.Size = new System.Drawing.Size(49, 13);
-      this.label2.TabIndex = 13;
-      this.label2.Text = "Surname";
+      this.surnameLabel.AutoSize = true;
+      this.surnameLabel.Location = new System.Drawing.Point(37, 70);
+      this.surnameLabel.Name = "surnameLabel";
+      this.surnameLabel.Size = new System.Drawing.Size(49, 13);
+      this.surnameLabel.TabIndex = 13;
+      this.surnameLabel.Text = "Surname";
       // 
       // surname
       // 
@@ -157,14 +157,14 @@
       this.surname.Size = new System.Drawing.Size(100, 20);
       this.surname.TabIndex = 16;
       // 
-      // label3
+      // ageLabel
       // 
-      this.label3.AutoSize = true;
-      this.label3.Location = new System.Drawing.Point(37, 113);
-      this.label3.Name = "label3";
-      this.label3.Size = new System.Drawing.Size(26, 13);
-      this.label3.TabIndex = 14;
-      this.label3.Text = "Age";
+      this.ageLabel.AutoSize = true;
+      this.ageLabel.Location = new System.Drawing.Point(37, 113);
+      this.ageLabel.Name = "ageLabel";
+      this.ageLabel.Size = new System.Drawing.Size(26, 13);
+      this.ageLabel.TabIndex = 14;
+      this.ageLabel.Text = "Age";
       // 
       // name
       // 
@@ -175,8 +175,8 @@
       // 
       // tabPageEntrant
       // 
-      this.tabPageEntrant.Controls.Add(this.label5);
-      this.tabPageEntrant.Controls.Add(this.label6);
+      this.tabPageEntrant.Controls.Add(this.desiredFacultyLabel);
+      this.tabPageEntrant.Controls.Add(this.schoolLabel);
       this.tabPageEntrant.Controls.Add(this.school);
       this.tabPageEntrant.Controls.Add(this.desiredFaculty);
       this.tabPageEntrant.Location = new System.Drawing.Point(4, 22);
@@ -186,23 +186,23 @@
       this.tabPageEntrant.Text = "Entrant";
       this.tabPageEntrant.UseVisualStyleBackColor = true;
       // 
-      // label5
+      // desiredFacultyLabel
       // 
-      this.label5.AutoSize = true;
-      this.label5.Location = new System.Drawing.Point(33, 35);
-      this.label5.Name = "label5";
-      this.label5.Size = new System.Drawing.Size(77, 13);
-      this.label5.TabIndex = 6;
-      this.label5.Text = "Desired faculty";
+      this.desiredFacultyLabel.AutoSize = true;
+      this.desiredFacultyLabel.Location = new System.Drawing.Point(33, 35);
+      this.desiredFacultyLabel.Name = "desiredFacultyLabel";
+      this.desiredFacultyLabel.Size = new System.Drawing.Size(77, 13);
+      this.desiredFacultyLabel.TabIndex = 6;
+      this.desiredFacultyLabel.Text = "Desired faculty";
       // 
-      // label6
+      // schoolLabel
       // 
-      this.label6.AutoSize = true;
-      this.label6.Location = new System.Drawing.Point(33, 73);
-      this.label6.Name = "label6";
-      this.label6.Size = new System.Drawing.Size(40, 13);
-      this.label6.TabIndex = 7;
-      this.label6.Text = "School";
+      this.schoolLabel.AutoSize = true;
+      this.schoolLabel.Location = new System.Drawing.Point(33, 73);
+      this.schoolLabel.Name = "schoolLabel";
+      this.schoolLabel.Size = new System.Drawing.Size(40, 13);
+      this.schoolLabel.TabIndex = 7;
+      this.schoolLabel.Text = "School";
       // 
       // school
       // 
@@ -246,17 +246,17 @@
     private System.Windows.Forms.TabControl tabControl1;
     private System.Windows.Forms.TabPage tabPageUniversity;
     private System.Windows.Forms.TextBox title;
-    private System.Windows.Forms.Label label4;
+    private System.Windows.Forms.Label titleLabel;
     private System.Windows.Forms.TabPage tabPageHuman;
-    private System.Windows.Forms.Label label1;
+    private System.Windows.Forms.Label nameLabel;
     private System.Windows.Forms.TextBox age;
-    private System.Windows.Forms.Label label2;
+    private System.Windows.Forms.Label surnameLabel;
     private System.Windows.Forms.TextBox surname;
-    private System.Windows.Forms.Label label3;
+    private System.Windows.Forms.Label ageLabel;
     private System.Windows.Forms.TextBox name;
     private System.Windows.Forms.TabPage tabPageEntrant;
-    private System.Windows.Forms.Label label5;
-    private System.Windows.Forms.Label label6;
+    private System.Windows.Forms.Label desiredFacultyLabel;
+    private System.Windows.Forms.Label schoolLabel;
     private System.Windows.Forms.TextBox school;
     private System.Windows.Forms.TextBox desiredFaculty;
   }

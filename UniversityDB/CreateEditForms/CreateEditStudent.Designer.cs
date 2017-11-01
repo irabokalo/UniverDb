@@ -33,17 +33,17 @@
       this.tabControl1 = new System.Windows.Forms.TabControl();
       this.tabPageUniversity = new System.Windows.Forms.TabPage();
       this.title = new System.Windows.Forms.TextBox();
-      this.label4 = new System.Windows.Forms.Label();
+      this.titleLabel = new System.Windows.Forms.Label();
       this.tabPageHuman = new System.Windows.Forms.TabPage();
-      this.label1 = new System.Windows.Forms.Label();
-      this.age = new System.Windows.Forms.TextBox();
-      this.label2 = new System.Windows.Forms.Label();
-      this.surname = new System.Windows.Forms.TextBox();
-      this.label3 = new System.Windows.Forms.Label();
-      this.name = new System.Windows.Forms.TextBox();
       this.tabPageStudent = new System.Windows.Forms.TabPage();
-      this.label5 = new System.Windows.Forms.Label();
-      this.label6 = new System.Windows.Forms.Label();
+      this.nameLabel = new System.Windows.Forms.Label();
+      this.age = new System.Windows.Forms.TextBox();
+      this.surnameLabel = new System.Windows.Forms.Label();
+      this.surname = new System.Windows.Forms.TextBox();
+      this.ageLabel = new System.Windows.Forms.Label();
+      this.name = new System.Windows.Forms.TextBox();
+      this.mediumMarkLabel = new System.Windows.Forms.Label();
+      this.favoriteSubjectLabel = new System.Windows.Forms.Label();
       this.favoriteSubject = new System.Windows.Forms.TextBox();
       this.mediumMark = new System.Windows.Forms.TextBox();
       this.tabControl1.SuspendLayout();
@@ -84,7 +84,7 @@
       // tabPageUniversity
       // 
       this.tabPageUniversity.Controls.Add(this.title);
-      this.tabPageUniversity.Controls.Add(this.label4);
+      this.tabPageUniversity.Controls.Add(this.titleLabel);
       this.tabPageUniversity.Location = new System.Drawing.Point(4, 22);
       this.tabPageUniversity.Name = "tabPageUniversity";
       this.tabPageUniversity.Padding = new System.Windows.Forms.Padding(3);
@@ -100,22 +100,22 @@
       this.title.Size = new System.Drawing.Size(127, 20);
       this.title.TabIndex = 13;
       // 
-      // label4
+      // titleLabel
       // 
-      this.label4.AutoSize = true;
-      this.label4.Location = new System.Drawing.Point(33, 42);
-      this.label4.Name = "label4";
-      this.label4.Size = new System.Drawing.Size(30, 13);
-      this.label4.TabIndex = 12;
-      this.label4.Text = "Title:";
+      this.titleLabel.AutoSize = true;
+      this.titleLabel.Location = new System.Drawing.Point(33, 42);
+      this.titleLabel.Name = "titleLabel";
+      this.titleLabel.Size = new System.Drawing.Size(30, 13);
+      this.titleLabel.TabIndex = 12;
+      this.titleLabel.Text = "Title:";
       // 
       // tabPageHuman
       // 
-      this.tabPageHuman.Controls.Add(this.label1);
+      this.tabPageHuman.Controls.Add(this.nameLabel);
       this.tabPageHuman.Controls.Add(this.age);
-      this.tabPageHuman.Controls.Add(this.label2);
+      this.tabPageHuman.Controls.Add(this.surnameLabel);
       this.tabPageHuman.Controls.Add(this.surname);
-      this.tabPageHuman.Controls.Add(this.label3);
+      this.tabPageHuman.Controls.Add(this.ageLabel);
       this.tabPageHuman.Controls.Add(this.name);
       this.tabPageHuman.Location = new System.Drawing.Point(4, 22);
       this.tabPageHuman.Name = "tabPageHuman";
@@ -125,58 +125,10 @@
       this.tabPageHuman.Text = "Human";
       this.tabPageHuman.UseVisualStyleBackColor = true;
       // 
-      // label1
-      // 
-      this.label1.AutoSize = true;
-      this.label1.Location = new System.Drawing.Point(37, 32);
-      this.label1.Name = "label1";
-      this.label1.Size = new System.Drawing.Size(35, 13);
-      this.label1.TabIndex = 12;
-      this.label1.Text = "Name";
-      // 
-      // age
-      // 
-      this.age.Location = new System.Drawing.Point(92, 110);
-      this.age.Name = "age";
-      this.age.Size = new System.Drawing.Size(100, 20);
-      this.age.TabIndex = 17;
-      // 
-      // label2
-      // 
-      this.label2.AutoSize = true;
-      this.label2.Location = new System.Drawing.Point(37, 70);
-      this.label2.Name = "label2";
-      this.label2.Size = new System.Drawing.Size(49, 13);
-      this.label2.TabIndex = 13;
-      this.label2.Text = "Surname";
-      // 
-      // surname
-      // 
-      this.surname.Location = new System.Drawing.Point(92, 70);
-      this.surname.Name = "surname";
-      this.surname.Size = new System.Drawing.Size(100, 20);
-      this.surname.TabIndex = 16;
-      // 
-      // label3
-      // 
-      this.label3.AutoSize = true;
-      this.label3.Location = new System.Drawing.Point(37, 113);
-      this.label3.Name = "label3";
-      this.label3.Size = new System.Drawing.Size(26, 13);
-      this.label3.TabIndex = 14;
-      this.label3.Text = "Age";
-      // 
-      // name
-      // 
-      this.name.Location = new System.Drawing.Point(92, 32);
-      this.name.Name = "name";
-      this.name.Size = new System.Drawing.Size(100, 20);
-      this.name.TabIndex = 15;
-      // 
       // tabPageStudent
       // 
-      this.tabPageStudent.Controls.Add(this.label5);
-      this.tabPageStudent.Controls.Add(this.label6);
+      this.tabPageStudent.Controls.Add(this.mediumMarkLabel);
+      this.tabPageStudent.Controls.Add(this.favoriteSubjectLabel);
       this.tabPageStudent.Controls.Add(this.favoriteSubject);
       this.tabPageStudent.Controls.Add(this.mediumMark);
       this.tabPageStudent.Location = new System.Drawing.Point(4, 22);
@@ -186,37 +138,85 @@
       this.tabPageStudent.Text = "Student";
       this.tabPageStudent.UseVisualStyleBackColor = true;
       // 
-      // label5
+      // nameLabel
       // 
-      this.label5.AutoSize = true;
-      this.label5.Location = new System.Drawing.Point(33, 35);
-      this.label5.Name = "label5";
-      this.label5.Size = new System.Drawing.Size(70, 13);
-      this.label5.TabIndex = 6;
-      this.label5.Text = "Medium mark";
+      this.nameLabel.AutoSize = true;
+      this.nameLabel.Location = new System.Drawing.Point(33, 34);
+      this.nameLabel.Name = "nameLabel";
+      this.nameLabel.Size = new System.Drawing.Size(35, 13);
+      this.nameLabel.TabIndex = 30;
+      this.nameLabel.Text = "Name";
       // 
-      // label6
+      // age
       // 
-      this.label6.AutoSize = true;
-      this.label6.Location = new System.Drawing.Point(33, 73);
-      this.label6.Name = "label6";
-      this.label6.Size = new System.Drawing.Size(82, 13);
-      this.label6.TabIndex = 7;
-      this.label6.Text = "Favorite subject";
+      this.age.Location = new System.Drawing.Point(88, 112);
+      this.age.Name = "age";
+      this.age.Size = new System.Drawing.Size(100, 20);
+      this.age.TabIndex = 35;
+      // 
+      // surnameLabel
+      // 
+      this.surnameLabel.AutoSize = true;
+      this.surnameLabel.Location = new System.Drawing.Point(33, 72);
+      this.surnameLabel.Name = "surnameLabel";
+      this.surnameLabel.Size = new System.Drawing.Size(49, 13);
+      this.surnameLabel.TabIndex = 31;
+      this.surnameLabel.Text = "Surname";
+      // 
+      // surname
+      // 
+      this.surname.Location = new System.Drawing.Point(88, 72);
+      this.surname.Name = "surname";
+      this.surname.Size = new System.Drawing.Size(100, 20);
+      this.surname.TabIndex = 34;
+      // 
+      // ageLabel
+      // 
+      this.ageLabel.AutoSize = true;
+      this.ageLabel.Location = new System.Drawing.Point(33, 115);
+      this.ageLabel.Name = "ageLabel";
+      this.ageLabel.Size = new System.Drawing.Size(26, 13);
+      this.ageLabel.TabIndex = 32;
+      this.ageLabel.Text = "Age";
+      // 
+      // name
+      // 
+      this.name.Location = new System.Drawing.Point(88, 34);
+      this.name.Name = "name";
+      this.name.Size = new System.Drawing.Size(100, 20);
+      this.name.TabIndex = 33;
+      // 
+      // mediumMarkLabel
+      // 
+      this.mediumMarkLabel.AutoSize = true;
+      this.mediumMarkLabel.Location = new System.Drawing.Point(26, 36);
+      this.mediumMarkLabel.Name = "mediumMarkLabel";
+      this.mediumMarkLabel.Size = new System.Drawing.Size(70, 13);
+      this.mediumMarkLabel.TabIndex = 15;
+      this.mediumMarkLabel.Text = "Medium mark";
+      // 
+      // favoriteSubjectLabel
+      // 
+      this.favoriteSubjectLabel.AutoSize = true;
+      this.favoriteSubjectLabel.Location = new System.Drawing.Point(26, 74);
+      this.favoriteSubjectLabel.Name = "favoriteSubjectLabel";
+      this.favoriteSubjectLabel.Size = new System.Drawing.Size(82, 13);
+      this.favoriteSubjectLabel.TabIndex = 16;
+      this.favoriteSubjectLabel.Text = "Favorite subject";
       // 
       // favoriteSubject
       // 
-      this.favoriteSubject.Location = new System.Drawing.Point(121, 70);
+      this.favoriteSubject.Location = new System.Drawing.Point(114, 71);
       this.favoriteSubject.Name = "favoriteSubject";
       this.favoriteSubject.Size = new System.Drawing.Size(100, 20);
-      this.favoriteSubject.TabIndex = 10;
+      this.favoriteSubject.TabIndex = 18;
       // 
       // mediumMark
       // 
-      this.mediumMark.Location = new System.Drawing.Point(121, 32);
+      this.mediumMark.Location = new System.Drawing.Point(114, 33);
       this.mediumMark.Name = "mediumMark";
       this.mediumMark.Size = new System.Drawing.Size(36, 20);
-      this.mediumMark.TabIndex = 9;
+      this.mediumMark.TabIndex = 17;
       // 
       // CreateEditStudent
       // 
@@ -246,17 +246,17 @@
     private System.Windows.Forms.TabControl tabControl1;
     private System.Windows.Forms.TabPage tabPageUniversity;
     private System.Windows.Forms.TextBox title;
-    private System.Windows.Forms.Label label4;
+    private System.Windows.Forms.Label titleLabel;
     private System.Windows.Forms.TabPage tabPageHuman;
-    private System.Windows.Forms.Label label1;
-    private System.Windows.Forms.TextBox age;
-    private System.Windows.Forms.Label label2;
-    private System.Windows.Forms.TextBox surname;
-    private System.Windows.Forms.Label label3;
-    private System.Windows.Forms.TextBox name;
     private System.Windows.Forms.TabPage tabPageStudent;
-    private System.Windows.Forms.Label label5;
-    private System.Windows.Forms.Label label6;
+    private System.Windows.Forms.Label nameLabel;
+    private System.Windows.Forms.TextBox age;
+    private System.Windows.Forms.Label surnameLabel;
+    private System.Windows.Forms.TextBox surname;
+    private System.Windows.Forms.Label ageLabel;
+    private System.Windows.Forms.TextBox name;
+    private System.Windows.Forms.Label mediumMarkLabel;
+    private System.Windows.Forms.Label favoriteSubjectLabel;
     private System.Windows.Forms.TextBox favoriteSubject;
     private System.Windows.Forms.TextBox mediumMark;
   }
