@@ -94,16 +94,26 @@ namespace University.DAL
         {
             obj.CreationTime = DateTime.Now;
             obj.LastWriteTime = DateTime.Now;
-            _ctx.UniversityObjects.Add(_mapper.CreateMapper().Map<UniversityObject>(obj));
+
+            var w = _mapper.CreateMapper().Map<UniversityObject>(obj);
+            w.Sealed = isSealed;
+            w.MajorId = obj.MajorId;
+
+            _ctx.UniversityObjects.Add(w);
+          
             _ctx.SaveChanges();
-            return _mapper.CreateMapper().Map<UniversityObject>(obj).Id;
+
+            var sk = _ctx.UniversityObjects.ToList();
+            return sk.Last().Id;
         }
 
         private int CreateHuman(HumanViewModel obj, bool isSealed)
         {
             int id = CreateUniversityObject(obj, false);
-            obj.Id = id;
-            _ctx.Humans.Add(_mapper.CreateMapper().Map<Human>(obj));
+            var human = _mapper.CreateMapper().Map<Human>(obj);
+            human.Id = id;
+            human.Sealed = isSealed;          
+            _ctx.Humans.Add(human);         
             _ctx.SaveChanges();
             return id;
         }
@@ -111,8 +121,9 @@ namespace University.DAL
         private int CreateEntrant(EntrantViewModel entrant, bool isSealed)
         {
             int id = CreateHuman(entrant, false);
-            entrant.Id = id;
+          
             _ctx.Entrants.Add(_mapper.CreateMapper().Map<Entrant>(entrant));
+            _mapper.CreateMapper().Map<Entrant>(entrant).Id = id;
             _ctx.SaveChanges();
             return id;
         }
@@ -120,8 +131,9 @@ namespace University.DAL
         private int CreateSubject(SubjectViewModel obj, bool isSealed)
         {
             int id = CreateUniversityObject(obj, false);
-            obj.Id = id;
+         
             _ctx.Subjects.Add(_mapper.CreateMapper().Map<Subject>(obj));
+            _mapper.CreateMapper().Map<Subject>(obj).Id = id;
             _ctx.SaveChanges();
             return id;
         }
@@ -129,8 +141,9 @@ namespace University.DAL
         private int CreateStudent(StudentViewModel entrant, bool isSealed)
         {
             int id = CreateHuman(entrant, false);
-            entrant.Id = id;
+          
             _ctx.Students.Add(_mapper.CreateMapper().Map<Student>(entrant));
+            _mapper.CreateMapper().Map<Student>(entrant).Id = id;
             _ctx.SaveChanges();
             return id;
         }
@@ -138,8 +151,9 @@ namespace University.DAL
         private int CreateGraduate(GraduateViewModel obj, bool isSealed)
         {
             int id = CreateStudent(obj, false);
-            obj.Id = id;
+          
             _ctx.Graduates.Add(_mapper.CreateMapper().Map<Graduate>(obj));
+            _mapper.CreateMapper().Map<Graduate>(obj).Id = id;
             _ctx.SaveChanges();
             return id;
         }
@@ -147,8 +161,9 @@ namespace University.DAL
         private int CreateExcellentStudent(ExcellentStudentViewModel obj, bool isSealed)
         {
             int id = CreateStudent(obj, false);
-            obj.Id = id;
+            _mapper.CreateMapper().Map<ExcellentStudent>(obj).Id = id;
             _ctx.ExcellentStudents.Add(_mapper.CreateMapper().Map<ExcellentStudent>(obj));
+           
             _ctx.SaveChanges();
             return id;
         }
@@ -156,8 +171,9 @@ namespace University.DAL
         private int CreateTeacher(TeacherViewModel entrant, bool isSealed)
         {
             int id = CreateHuman(entrant, false);
-            entrant.Id = id;
+            _mapper.CreateMapper().Map<Teacher>(entrant).Id = id;
             _ctx.Teachers.Add(_mapper.CreateMapper().Map<Teacher>(entrant));
+            
             _ctx.SaveChanges();
             return id;
         }
@@ -165,7 +181,7 @@ namespace University.DAL
         private int CreatePair(PairViewModel obj, bool isSealed)
         {
             int id = CreateUniversityObject(obj, false);
-            obj.Id = id;
+            _mapper.CreateMapper().Map<Pair>(obj).Id = id;
             _ctx.Pairs.Add(_mapper.CreateMapper().Map<Pair>(obj));
             _ctx.SaveChanges();
             return id;
@@ -174,7 +190,7 @@ namespace University.DAL
         private int CreateLecture(PairViewModel obj, bool isSealed)
         {
             int id = CreatePair(obj, false);
-            obj.Id = id;
+            _mapper.CreateMapper().Map<Lecture>(obj).Id = id;
             _ctx.Lectures.Add(_mapper.CreateMapper().Map<Lecture>(obj));
             _ctx.SaveChanges();
             return id;
@@ -183,7 +199,7 @@ namespace University.DAL
         private int CreatePractice(PracticeViewModel obj, bool isSealed)
         {
             int id = CreatePair(obj, false);
-            obj.Id = id;
+            _mapper.CreateMapper().Map<Practice>(obj).Id = id;
             _ctx.Practices.Add(_mapper.CreateMapper().Map<Practice>(obj));
             _ctx.SaveChanges();
             return id;

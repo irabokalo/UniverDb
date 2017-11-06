@@ -1,242 +1,218 @@
 ﻿namespace UniversityDB.CreateEditForms
 {
-  partial class CreateEditTeacher
-  {
-    /// <summary>
-    /// Required designer variable.
-    /// </summary>
-    private System.ComponentModel.IContainer components = null;
-
-    /// <summary>
-    /// Clean up any resources being used.
-    /// </summary>
-    /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-    protected override void Dispose(bool disposing)
+    partial class CreateEditTeacher
     {
-      if (disposing && (components != null))
-      {
-        components.Dispose();
-      }
-      base.Dispose(disposing);
-    }
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
 
-    #region Windows Form Designer generated code
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
 
-    /// <summary>
-    /// Required method for Designer support - do not modify
-    /// the contents of this method with the code editor.
-    /// </summary>
-    private void InitializeComponent()
-    {
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.okButton = new System.Windows.Forms.Button();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPageUniversity = new System.Windows.Forms.TabPage();
-            this.title = new System.Windows.Forms.TextBox();
-            this.titleLabel = new System.Windows.Forms.Label();
-            this.tabPageHuman = new System.Windows.Forms.TabPage();
-            this.nameLabel = new System.Windows.Forms.Label();
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.age = new System.Windows.Forms.TextBox();
-            this.surnameLabel = new System.Windows.Forms.Label();
             this.surname = new System.Windows.Forms.TextBox();
-            this.ageLabel = new System.Windows.Forms.Label();
             this.name = new System.Windows.Forms.TextBox();
-            this.tabPageTeacher = new System.Windows.Forms.TabPage();
-            this.educationLabel = new System.Windows.Forms.Label();
-            this.education = new System.Windows.Forms.TextBox();
-            this.tabControl1.SuspendLayout();
-            this.tabPageUniversity.SuspendLayout();
-            this.tabPageHuman.SuspendLayout();
-            this.tabPageTeacher.SuspendLayout();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Close = new System.Windows.Forms.Button();
+            this.saveUObject = new System.Windows.Forms.Button();
+            this.uTitle = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.Education = new System.Windows.Forms.TextBox();
+            this.texc = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // cancelButton
+            // label6
             // 
-            this.cancelButton.Location = new System.Drawing.Point(354, 146);
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(75, 23);
-            this.cancelButton.TabIndex = 8;
-            this.cancelButton.Text = "Cancel";
-            this.cancelButton.UseVisualStyleBackColor = true;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(315, 35);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(41, 13);
+            this.label6.TabIndex = 27;
+            this.label6.Text = "Human";
             // 
-            // okButton
+            // label5
             // 
-            this.okButton.Location = new System.Drawing.Point(354, 106);
-            this.okButton.Name = "okButton";
-            this.okButton.Size = new System.Drawing.Size(75, 23);
-            this.okButton.TabIndex = 7;
-            this.okButton.Text = "OK";
-            this.okButton.UseVisualStyleBackColor = true;
-            this.okButton.Click += new System.EventHandler(this.okButton_Click);
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPageUniversity);
-            this.tabControl1.Controls.Add(this.tabPageHuman);
-            this.tabControl1.Controls.Add(this.tabPageTeacher);
-            this.tabControl1.Location = new System.Drawing.Point(32, 39);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(298, 217);
-            this.tabControl1.TabIndex = 6;
-            // 
-            // tabPageUniversity
-            // 
-            this.tabPageUniversity.Controls.Add(this.title);
-            this.tabPageUniversity.Controls.Add(this.titleLabel);
-            this.tabPageUniversity.Location = new System.Drawing.Point(4, 22);
-            this.tabPageUniversity.Name = "tabPageUniversity";
-            this.tabPageUniversity.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageUniversity.Size = new System.Drawing.Size(290, 191);
-            this.tabPageUniversity.TabIndex = 0;
-            this.tabPageUniversity.Text = "UniversityObj";
-            this.tabPageUniversity.UseVisualStyleBackColor = true;
-            // 
-            // title
-            // 
-            this.title.Location = new System.Drawing.Point(69, 35);
-            this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(127, 20);
-            this.title.TabIndex = 13;
-            // 
-            // titleLabel
-            // 
-            this.titleLabel.AutoSize = true;
-            this.titleLabel.Location = new System.Drawing.Point(33, 42);
-            this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(30, 13);
-            this.titleLabel.TabIndex = 12;
-            this.titleLabel.Text = "Title:";
-            // 
-            // tabPageHuman
-            // 
-            this.tabPageHuman.Controls.Add(this.nameLabel);
-            this.tabPageHuman.Controls.Add(this.age);
-            this.tabPageHuman.Controls.Add(this.surnameLabel);
-            this.tabPageHuman.Controls.Add(this.surname);
-            this.tabPageHuman.Controls.Add(this.ageLabel);
-            this.tabPageHuman.Controls.Add(this.name);
-            this.tabPageHuman.Location = new System.Drawing.Point(4, 22);
-            this.tabPageHuman.Name = "tabPageHuman";
-            this.tabPageHuman.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageHuman.Size = new System.Drawing.Size(290, 191);
-            this.tabPageHuman.TabIndex = 1;
-            this.tabPageHuman.Text = "Human";
-            this.tabPageHuman.UseVisualStyleBackColor = true;
-            // 
-            // nameLabel
-            // 
-            this.nameLabel.AutoSize = true;
-            this.nameLabel.Location = new System.Drawing.Point(37, 32);
-            this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(35, 13);
-            this.nameLabel.TabIndex = 12;
-            this.nameLabel.Text = "Name";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(66, 35);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(38, 13);
+            this.label5.TabIndex = 26;
+            this.label5.Text = "Object";
             // 
             // age
             // 
-            this.age.Location = new System.Drawing.Point(92, 110);
+            this.age.Location = new System.Drawing.Point(350, 181);
             this.age.Name = "age";
             this.age.Size = new System.Drawing.Size(100, 20);
-            this.age.TabIndex = 17;
-            // 
-            // surnameLabel
-            // 
-            this.surnameLabel.AutoSize = true;
-            this.surnameLabel.Location = new System.Drawing.Point(37, 70);
-            this.surnameLabel.Name = "surnameLabel";
-            this.surnameLabel.Size = new System.Drawing.Size(49, 13);
-            this.surnameLabel.TabIndex = 13;
-            this.surnameLabel.Text = "Surname";
+            this.age.TabIndex = 25;
             // 
             // surname
             // 
-            this.surname.Location = new System.Drawing.Point(92, 70);
+            this.surname.Location = new System.Drawing.Point(350, 143);
             this.surname.Name = "surname";
             this.surname.Size = new System.Drawing.Size(100, 20);
-            this.surname.TabIndex = 16;
-            // 
-            // ageLabel
-            // 
-            this.ageLabel.AutoSize = true;
-            this.ageLabel.Location = new System.Drawing.Point(37, 113);
-            this.ageLabel.Name = "ageLabel";
-            this.ageLabel.Size = new System.Drawing.Size(26, 13);
-            this.ageLabel.TabIndex = 14;
-            this.ageLabel.Text = "Age";
+            this.surname.TabIndex = 24;
             // 
             // name
             // 
-            this.name.Location = new System.Drawing.Point(92, 32);
+            this.name.Location = new System.Drawing.Point(350, 103);
             this.name.Name = "name";
             this.name.Size = new System.Drawing.Size(100, 20);
-            this.name.TabIndex = 15;
+            this.name.TabIndex = 23;
             // 
-            // tabPageTeacher
+            // label4
             // 
-            this.tabPageTeacher.Controls.Add(this.educationLabel);
-            this.tabPageTeacher.Controls.Add(this.education);
-            this.tabPageTeacher.Location = new System.Drawing.Point(4, 22);
-            this.tabPageTeacher.Name = "tabPageTeacher";
-            this.tabPageTeacher.Size = new System.Drawing.Size(290, 191);
-            this.tabPageTeacher.TabIndex = 2;
-            this.tabPageTeacher.Text = "Teacher";
-            this.tabPageTeacher.UseVisualStyleBackColor = true;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(256, 181);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(26, 13);
+            this.label4.TabIndex = 22;
+            this.label4.Text = "Age";
             // 
-            // educationLabel
+            // label3
             // 
-            this.educationLabel.AutoSize = true;
-            this.educationLabel.Location = new System.Drawing.Point(33, 35);
-            this.educationLabel.Name = "educationLabel";
-            this.educationLabel.Size = new System.Drawing.Size(55, 13);
-            this.educationLabel.TabIndex = 6;
-            this.educationLabel.Text = "Education";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(256, 143);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(49, 13);
+            this.label3.TabIndex = 21;
+            this.label3.Text = "Surname";
             // 
-            // education
+            // label2
             // 
-            this.education.Location = new System.Drawing.Point(121, 32);
-            this.education.Name = "education";
-            this.education.Size = new System.Drawing.Size(115, 20);
-            this.education.TabIndex = 9;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(256, 103);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "Name";
+            // 
+            // Close
+            // 
+            this.Close.Location = new System.Drawing.Point(114, 232);
+            this.Close.Name = "Close";
+            this.Close.Size = new System.Drawing.Size(75, 23);
+            this.Close.TabIndex = 19;
+            this.Close.Text = "Close";
+            this.Close.UseVisualStyleBackColor = true;
+            // 
+            // saveUObject
+            // 
+            this.saveUObject.Location = new System.Drawing.Point(20, 232);
+            this.saveUObject.Name = "saveUObject";
+            this.saveUObject.Size = new System.Drawing.Size(75, 23);
+            this.saveUObject.TabIndex = 18;
+            this.saveUObject.Text = "Ok";
+            this.saveUObject.UseVisualStyleBackColor = true;
+            // 
+            // uTitle
+            // 
+            this.uTitle.Location = new System.Drawing.Point(69, 96);
+            this.uTitle.Name = "uTitle";
+            this.uTitle.Size = new System.Drawing.Size(100, 20);
+            this.uTitle.TabIndex = 17;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(17, 103);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(27, 13);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Title";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(531, 35);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(47, 13);
+            this.label7.TabIndex = 28;
+            this.label7.Text = "Teacher";
+            // 
+            // Education
+            // 
+            this.Education.Location = new System.Drawing.Point(566, 96);
+            this.Education.Name = "Education";
+            this.Education.Size = new System.Drawing.Size(100, 20);
+            this.Education.TabIndex = 30;
+            // 
+            // texc
+            // 
+            this.texc.AutoSize = true;
+            this.texc.Location = new System.Drawing.Point(489, 103);
+            this.texc.Name = "texc";
+            this.texc.Size = new System.Drawing.Size(55, 13);
+            this.texc.TabIndex = 29;
+            this.texc.Text = "Education";
             // 
             // CreateEditTeacher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(476, 307);
-            this.Controls.Add(this.cancelButton);
-            this.Controls.Add(this.okButton);
-            this.Controls.Add(this.tabControl1);
+            this.ClientSize = new System.Drawing.Size(711, 292);
+            this.Controls.Add(this.Education);
+            this.Controls.Add(this.texc);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.age);
+            this.Controls.Add(this.surname);
+            this.Controls.Add(this.name);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.Close);
+            this.Controls.Add(this.saveUObject);
+            this.Controls.Add(this.uTitle);
+            this.Controls.Add(this.label1);
             this.Name = "CreateEditTeacher";
             this.Text = "CreateEditTeacher";
-            this.tabControl1.ResumeLayout(false);
-            this.tabPageUniversity.ResumeLayout(false);
-            this.tabPageUniversity.PerformLayout();
-            this.tabPageHuman.ResumeLayout(false);
-            this.tabPageHuman.PerformLayout();
-            this.tabPageTeacher.ResumeLayout(false);
-            this.tabPageTeacher.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox age;
+        private System.Windows.Forms.TextBox surname;
+        private System.Windows.Forms.TextBox name;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button Close;
+        private System.Windows.Forms.Button saveUObject;
+        private System.Windows.Forms.TextBox uTitle;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox Education;
+        private System.Windows.Forms.Label texc;
     }
-
-    #endregion
-
-    private System.Windows.Forms.Button cancelButton;
-    private System.Windows.Forms.Button okButton;
-    private System.Windows.Forms.TabControl tabControl1;
-    private System.Windows.Forms.TabPage tabPageUniversity;
-    private System.Windows.Forms.TextBox title;
-    private System.Windows.Forms.Label titleLabel;
-    private System.Windows.Forms.TabPage tabPageHuman;
-    private System.Windows.Forms.Label nameLabel;
-    private System.Windows.Forms.TextBox age;
-    private System.Windows.Forms.Label surnameLabel;
-    private System.Windows.Forms.TextBox surname;
-    private System.Windows.Forms.Label ageLabel;
-    private System.Windows.Forms.TextBox name;
-    private System.Windows.Forms.TabPage tabPageTeacher;
-    private System.Windows.Forms.Label educationLabel;
-    private System.Windows.Forms.TextBox education;
-  }
 }

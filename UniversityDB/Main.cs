@@ -33,11 +33,19 @@ namespace UniversityDB
         public Main()
         {
             _repo = new UniversityRepository();
+
+            MenuItem details = new MenuItem("Details", btnDetails_Click);
+            MenuItem create = new MenuItem("Create", btnCreate_Click);
+            MenuItem edit = new MenuItem("Edit", btnEdit_Click);
+            MenuItem delete = new MenuItem("Delete", btnDelete_Click);
+            contextMenu = new ContextMenu(new MenuItem[] { create, details, edit, delete });
+
+
             InitializeComponent();
-            
-            
+
+
             InitializeTree();
-            InitializeComponent();
+            //  InitializeComponent();
         }
 
         private List<string> GetTypesOfEntities(string parentType)
@@ -109,63 +117,116 @@ namespace UniversityDB
             switch (type)
             {
                 case "University Object":
-                    CreateEditUniversityObj uObjWindow = new CreateEditUniversityObj();
-                    if (uObjWindow.ShowDialog() == DialogResult.OK)
-                    {
-                        uObjWindow.Value.MajorId = majorId;
-                        _repo.CreateUniversityObject(uObjWindow.Value);
-                        id = uObjWindow.Value.Id;
-                        title = uObjWindow.Value.TypeName;
-                    }
+                    CreateEditObject uObjWindow = new CreateEditObject();
+                    uObjWindow.ShowDialog();
+                    uObjWindow.Value.MajorId = majorId;
+                    id = _repo.CreateUniversityObject(uObjWindow.Value);
+                    //id = _repo.CreateUniversityObject(uObjWindow.Value);
+                    title = uObjWindow.Value.TypeName;
                     break;
-                case "University Object":
-                    CreateEditUniversityObj uObjWindow = new CreateEditUniversityObj();
-                    if (uObjWindow.ShowDialog() == DialogResult.OK)
-                    {
-                        uObjWindow.Value.MajorId = majorId;
-                        _repo.CreateUniversityObject(uObjWindow.Value);
-                        id = uObjWindow.Value.Id;
-                        title = uObjWindow.Value.TypeName;
-                    }
+
+                case "Human":
+                    CreateEditHuman personWindow = new CreateEditHuman();
+                    personWindow.ShowDialog();
+                    personWindow.Value.MajorId = majorId;
+                    id = _repo.CreateHuman(personWindow.Value);
+                    //id = _repo.CreateUniversityObject(uObjWindow.Value);
+                    title = personWindow.Value.TypeName;
                     break;
+                case "Subject":
+                    CreateEditHuman personWindow = new CreateEditHuman();
+                    personWindow.ShowDialog();
+                    personWindow.Value.MajorId = majorId;
+                    id = _repo.CreateHuman(personWindow.Value);
+                    //id = _repo.CreateUniversityObject(uObjWindow.Value);
+                    title = personWindow.Value.TypeName;
+                    break;
+                case "Human":
+                    CreateEditHuman personWindow = new CreateEditHuman();
+                    personWindow.ShowDialog();
+                    personWindow.Value.MajorId = majorId;
+                    id = _repo.CreateHuman(personWindow.Value);
+                    //id = _repo.CreateUniversityObject(uObjWindow.Value);
+                    title = personWindow.Value.TypeName;
+                    break;
+                case "Human":
+                    CreateEditHuman personWindow = new CreateEditHuman();
+                    personWindow.ShowDialog();
+                    personWindow.Value.MajorId = majorId;
+                    id = _repo.CreateHuman(personWindow.Value);
+                    //id = _repo.CreateUniversityObject(uObjWindow.Value);
+                    title = personWindow.Value.TypeName;
+                    break;
+
+
 
             }
 
             if (id != 0)
             {
                 TreeNode current = parent == null
-                    ? tree.Nodes.Add(title)
-                    : parent.Nodes.Add(title);
+                ? tree.Nodes.Add(title)
+                : parent.Nodes.Add(title);
 
                 current.Tag = new NodeInfo { Id = id, Type = type, Expanded = true };
             }
+
         }
 
         private void ShowDetails(string type, int id)
         {
             switch (type)
             {
-  
+
             }
         }
 
         private void Edit(string type, int id)
         {
-           
+
         }
 
         private void add_Click(object sender, EventArgs e)
         {
             Select window = new Select(GetTypesOfEntities("root"));
+
             window.ShowDialog();
-                Create(window.SelectedType, null);
-            
+            Create(window.SelectedType, null);
+
+
         }
+
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+            NodeInfo info = (NodeInfo)tree.SelectedNode.Tag;
+
+            Select window = new Select(GetTypesOfEntities(info.Type));
+
+            window.ShowDialog();
+            Create(window.SelectedType, tree.SelectedNode);
+
+        }
+
+        private void btnDetails_Click(object sender, EventArgs e)
+        {
+            NodeInfo info = (NodeInfo)tree.SelectedNode.Tag;
+            ShowDetails(info.Type, info.Id);
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            NodeInfo info = (NodeInfo)tree.SelectedNode.Tag;
+            Edit(info.Type, info.Id);
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            NodeInfo info = (NodeInfo)tree.SelectedNode.Tag;
+            //  Delete(info.Type, info.Id);
+        }
+
+
     }
-
-
-
-
 
     public class NodeInfo
     {
@@ -175,4 +236,3 @@ namespace UniversityDB
     }
 
 }
-   

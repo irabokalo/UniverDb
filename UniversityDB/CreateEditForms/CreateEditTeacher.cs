@@ -1,29 +1,31 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using University.DAL.Models;
 
 namespace UniversityDB.CreateEditForms
 {
-  public partial class CreateEditTeacher : Form
-  {
-    public CreateEditTeacher()
+    public partial class CreateEditTeacher : Form
     {
-      InitializeComponent();
-    }
+        public TeacherViewModel Value { get; set; }
 
-        private void okButton_Click(object sender, EventArgs e)
+        public CreateEditTeacher()
         {
-            //if(tabControl1.SelectedTab.Name == 1)
+            InitializeComponent();
+        }
 
-            //{
-            //}
+        private void saveUObject_Click(object sender, EventArgs e)
+        {
+            Value.TypeName = uTitle.Text;
+            Value.Name = name.Text;
+            Value.Surname = surname.Text;
+            Value.Age = Int32.Parse(age.Text);
+            Value.Education = Education.Text;
+            Close();
+        }
 
+        private void Close_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

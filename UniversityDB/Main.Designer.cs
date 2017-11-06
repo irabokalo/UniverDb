@@ -38,6 +38,8 @@
             this.tree.Name = "tree";
             this.tree.Size = new System.Drawing.Size(477, 355);
             this.tree.TabIndex = 0;
+            this.tree.BeforeExpand += new System.Windows.Forms.TreeViewCancelEventHandler(this.tree_BeforeExpand);
+            this.tree.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tree_NodeMouseClick);
             // 
             // add
             // 

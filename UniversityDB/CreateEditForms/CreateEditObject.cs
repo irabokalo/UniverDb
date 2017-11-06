@@ -11,32 +11,24 @@ using University.DAL.Models;
 
 namespace UniversityDB.CreateEditForms
 {
-    public partial class CreateEditPair : Form
+    public partial class CreateEditObject : Form
     {
-        public PairViewModel Value { get; set; }
-        public CreateEditPair()
+        public UniversityObjectViewModel Value { get; set; }
+        public CreateEditObject()
         {
-            Value = new PairViewModel();
+            Value = new UniversityObjectViewModel();
             InitializeComponent();
         }
 
         private void saveUObject_Click(object sender, EventArgs e)
-        {
+        {   
             Value.TypeName = uTitle.Text;
-            Value.DurationInMinutes = Int32.Parse(duration.Text);
-            Value.RoomNumber = Int32.Parse(room.Text);
-
             Close();
         }
 
         private void Close_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-        private void Close_Click_1(object sender, EventArgs e)
-        {
-
         }
     }
 }

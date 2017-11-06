@@ -1,6 +1,6 @@
 ﻿namespace UniversityDB.CreateEditForms
 {
-    partial class CreateEditPair
+    partial class CreateEditSubject
     {
         /// <summary>
         /// Required designer variable.
@@ -35,15 +35,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.room = new System.Windows.Forms.TextBox();
-            this.duration = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.name = new System.Windows.Forms.TextBox();
+            this.description = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(66, 21);
+            this.label5.Location = new System.Drawing.Point(74, 36);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(38, 13);
             this.label5.TabIndex = 19;
@@ -51,7 +51,7 @@
             // 
             // Close
             // 
-            this.Close.Location = new System.Drawing.Point(114, 218);
+            this.Close.Location = new System.Drawing.Point(122, 233);
             this.Close.Name = "Close";
             this.Close.Size = new System.Drawing.Size(75, 23);
             this.Close.TabIndex = 18;
@@ -61,7 +61,7 @@
             // 
             // saveUObject
             // 
-            this.saveUObject.Location = new System.Drawing.Point(20, 218);
+            this.saveUObject.Location = new System.Drawing.Point(28, 233);
             this.saveUObject.Name = "saveUObject";
             this.saveUObject.Size = new System.Drawing.Size(75, 23);
             this.saveUObject.TabIndex = 17;
@@ -71,7 +71,7 @@
             // 
             // uTitle
             // 
-            this.uTitle.Location = new System.Drawing.Point(69, 82);
+            this.uTitle.Location = new System.Drawing.Point(77, 97);
             this.uTitle.Name = "uTitle";
             this.uTitle.Size = new System.Drawing.Size(100, 20);
             this.uTitle.TabIndex = 16;
@@ -79,7 +79,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 89);
+            this.label1.Location = new System.Drawing.Point(25, 104);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(27, 13);
             this.label1.TabIndex = 15;
@@ -88,52 +88,52 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(261, 120);
+            this.label2.Location = new System.Drawing.Point(326, 36);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(97, 13);
+            this.label2.Size = new System.Drawing.Size(43, 13);
             this.label2.TabIndex = 20;
-            this.label2.Text = "Duration in minutes";
+            this.label2.Text = "Subject";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(261, 85);
+            this.label3.Location = new System.Drawing.Point(295, 97);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 13);
+            this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 21;
-            this.label3.Text = "Room number";
+            this.label3.Text = "Name";
             // 
-            // label6
+            // label4
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(337, 21);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(25, 13);
-            this.label6.TabIndex = 23;
-            this.label6.Text = "Pair";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(295, 156);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(60, 13);
+            this.label4.TabIndex = 22;
+            this.label4.Text = "Description";
             // 
-            // room
+            // name
             // 
-            this.room.Location = new System.Drawing.Point(399, 85);
-            this.room.Name = "room";
-            this.room.Size = new System.Drawing.Size(100, 20);
-            this.room.TabIndex = 24;
+            this.name.Location = new System.Drawing.Point(365, 97);
+            this.name.Name = "name";
+            this.name.Size = new System.Drawing.Size(100, 20);
+            this.name.TabIndex = 23;
             // 
-            // duration
+            // description
             // 
-            this.duration.Location = new System.Drawing.Point(399, 120);
-            this.duration.Name = "duration";
-            this.duration.Size = new System.Drawing.Size(100, 20);
-            this.duration.TabIndex = 25;
+            this.description.Location = new System.Drawing.Point(365, 149);
+            this.description.Name = "description";
+            this.description.Size = new System.Drawing.Size(100, 20);
+            this.description.TabIndex = 24;
             // 
-            // CreateEditPair
+            // CreateEditSubject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(560, 267);
-            this.Controls.Add(this.duration);
-            this.Controls.Add(this.room);
-            this.Controls.Add(this.label6);
+            this.ClientSize = new System.Drawing.Size(497, 278);
+            this.Controls.Add(this.description);
+            this.Controls.Add(this.name);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label5);
@@ -141,8 +141,8 @@
             this.Controls.Add(this.saveUObject);
             this.Controls.Add(this.uTitle);
             this.Controls.Add(this.label1);
-            this.Name = "CreateEditPair";
-            this.Text = "CreateEditPair";
+            this.Name = "CreateEditSubject";
+            this.Text = "CreateEditSubject";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -157,8 +157,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox room;
-        private System.Windows.Forms.TextBox duration;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox name;
+        private System.Windows.Forms.TextBox description;
     }
 }

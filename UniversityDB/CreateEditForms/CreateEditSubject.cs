@@ -11,27 +11,24 @@ using University.DAL.Models;
 
 namespace UniversityDB.CreateEditForms
 {
-    public partial class CreateEditEntrant : Form
+    public partial class CreateEditSubject : Form
     {
-        public EntrantViewModel Value { get; set; }
-        public CreateEditEntrant()
+        public SubjectViewModel Value { get; set; }
+        public CreateEditSubject()
         {
-            Value = new EntrantViewModel();
             InitializeComponent();
+            Value = new SubjectViewModel();
         }
 
-        private void saveUObject_Click_1(object sender, EventArgs e)
+        private void saveUObject_Click(object sender, EventArgs e)
         {
             Value.TypeName = uTitle.Text;
             Value.Name = name.Text;
-            Value.Surname = surname.Text;
-            Value.Age = Int32.Parse(age.Text);
-            Value.DesiredFaculty = faculty.Text;
-            Value.School = school.Text;
+            Value.Description = description.Text;
             Close();
         }
 
-        private void Close_Click_1(object sender, EventArgs e)
+        private void Close_Click(object sender, EventArgs e)
         {
             Close();
         }
