@@ -119,6 +119,7 @@
             this.Close.TabIndex = 19;
             this.Close.Text = "Close";
             this.Close.UseVisualStyleBackColor = true;
+            this.Close.Click += new System.EventHandler(this.Close_Click);
             // 
             // saveUObject
             // 
@@ -128,6 +129,7 @@
             this.saveUObject.TabIndex = 18;
             this.saveUObject.Text = "Ok";
             this.saveUObject.UseVisualStyleBackColor = true;
+            this.saveUObject.Click += new System.EventHandler(this.saveUObject_Click);
             // 
             // uTitle
             // 

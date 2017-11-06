@@ -121,7 +121,6 @@ namespace UniversityDB
                     uObjWindow.ShowDialog();
                     uObjWindow.Value.MajorId = majorId;
                     id = _repo.CreateUniversityObject(uObjWindow.Value);
-                    //id = _repo.CreateUniversityObject(uObjWindow.Value);
                     title = uObjWindow.Value.TypeName;
                     break;
 
@@ -130,32 +129,70 @@ namespace UniversityDB
                     personWindow.ShowDialog();
                     personWindow.Value.MajorId = majorId;
                     id = _repo.CreateHuman(personWindow.Value);
-                    //id = _repo.CreateUniversityObject(uObjWindow.Value);
                     title = personWindow.Value.TypeName;
                     break;
                 case "Subject":
-                    CreateEditHuman personWindow = new CreateEditHuman();
-                    personWindow.ShowDialog();
-                    personWindow.Value.MajorId = majorId;
-                    id = _repo.CreateHuman(personWindow.Value);
-                    //id = _repo.CreateUniversityObject(uObjWindow.Value);
-                    title = personWindow.Value.TypeName;
+                    CreateEditSubject SubjectWindow = new CreateEditSubject();
+                    SubjectWindow.ShowDialog();
+                    SubjectWindow.Value.MajorId = majorId;
+                    id = _repo.CreateSubject(SubjectWindow.Value);
+                    title = SubjectWindow.Value.TypeName;
                     break;
-                case "Human":
-                    CreateEditHuman personWindow = new CreateEditHuman();
-                    personWindow.ShowDialog();
-                    personWindow.Value.MajorId = majorId;
-                    id = _repo.CreateHuman(personWindow.Value);
-                    //id = _repo.CreateUniversityObject(uObjWindow.Value);
-                    title = personWindow.Value.TypeName;
+                case "Student":
+                    CreateEditStudent studentWindow = new CreateEditStudent();
+                    studentWindow.ShowDialog();
+                    studentWindow.Value.MajorId = majorId;
+                    id = _repo.CreateStudent(studentWindow.Value);          
+                    title = studentWindow.Value.TypeName;
                     break;
-                case "Human":
-                    CreateEditHuman personWindow = new CreateEditHuman();
-                    personWindow.ShowDialog();
-                    personWindow.Value.MajorId = majorId;
-                    id = _repo.CreateHuman(personWindow.Value);
-                    //id = _repo.CreateUniversityObject(uObjWindow.Value);
-                    title = personWindow.Value.TypeName;
+                case "Entrant":
+                    CreateEditEntrant entrantWindow = new CreateEditEntrant();
+                    entrantWindow.ShowDialog();
+                    entrantWindow.Value.MajorId = majorId;
+                    id = _repo.CreateEntrant(entrantWindow.Value);               
+                    title = entrantWindow.Value.TypeName;
+                    break;
+                case "Teacher":
+                    CreateEditTeacher teacherWindow = new CreateEditTeacher();
+                    teacherWindow.ShowDialog();
+                    teacherWindow.Value.MajorId = majorId;
+                    id = _repo.CreateTeacher(teacherWindow.Value);
+                    title = teacherWindow.Value.TypeName;
+                    break;
+                case "Pair":
+                    CreateEditPair pairWindow = new CreateEditPair();
+                    pairWindow.ShowDialog();
+                    pairWindow.Value.MajorId = majorId;
+                    id = _repo.CreatePair(pairWindow.Value);
+                    title = pairWindow.Value.TypeName;
+                    break;
+                case "Practice":
+                    CreateEditPractice practiceWindow = new CreateEditPractice();
+                    practiceWindow.ShowDialog();
+                    practiceWindow.Value.MajorId = majorId;
+                    id = _repo.CreatePractice(practiceWindow.Value);
+                    title = practiceWindow.Value.TypeName;
+                    break;
+                case "Lecture":
+                    CreateEditLecture LectureWindow = new CreateEditLecture();
+                    LectureWindow.ShowDialog();
+                    LectureWindow.Value.MajorId = majorId;
+                    id = _repo.CreateLecture(LectureWindow.Value);
+                    title = LectureWindow.Value.TypeName;
+                    break;
+                case "Graduate":
+                    CreateEditGraduate GraduateWindow = new CreateEditGraduate();
+                    GraduateWindow.ShowDialog();
+                    GraduateWindow.Value.MajorId = majorId;
+                    id = _repo.CreateGraduate(GraduateWindow.Value);
+                    title = GraduateWindow.Value.TypeName;
+                    break;
+                case "Excellent Student":
+                    CreateEditExcellentStudent excellentStudentWindow = new CreateEditExcellentStudent();
+                    excellentStudentWindow.ShowDialog();
+                    excellentStudentWindow.Value.MajorId = majorId;
+                    id = _repo.CreateExcellentStudent(excellentStudentWindow.Value);
+                    title = excellentStudentWindow.Value.TypeName;
                     break;
 
 

@@ -9,7 +9,9 @@ namespace UniversityDB.CreateEditForms
         public TeacherViewModel Value { get; set; }
 
         public CreateEditTeacher()
+            
         {
+            Value = new TeacherViewModel();
             InitializeComponent();
         }
 

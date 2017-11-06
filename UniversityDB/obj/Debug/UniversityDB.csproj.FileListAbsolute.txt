@@ -42,3 +42,12 @@ C:\Users\Iryna.Bokalo\Documents\111\UniversityDB\obj\Debug\UniversityDB.pdb
 C:\Users\Iryna.Bokalo\Documents\111\UniversityDB\obj\Debug\UniversityDB.Select.resources
 C:\Users\Iryna.Bokalo\Documents\111\UniversityDB\obj\Debug\UniversityDB.CreateEditForms.CreateEditObject.resources
 C:\Users\Iryna.Bokalo\Documents\111\UniversityDB\obj\Debug\UniversityDB.CreateEditForms.CreateEditHuman.resources
+C:\Users\Iryna.Bokalo\Documents\111\UniversityDB\obj\Debug\UniversityDB.CreateEditForms.CreateEditEntrant.resources
+C:\Users\Iryna.Bokalo\Documents\111\UniversityDB\obj\Debug\UniversityDB.CreateEditForms.CreateEditExcellentStudent.resources
+C:\Users\Iryna.Bokalo\Documents\111\UniversityDB\obj\Debug\UniversityDB.CreateEditForms.CreateEditGraduate.resources
+C:\Users\Iryna.Bokalo\Documents\111\UniversityDB\obj\Debug\UniversityDB.CreateEditForms.CreateEditLecture.resources
+C:\Users\Iryna.Bokalo\Documents\111\UniversityDB\obj\Debug\UniversityDB.CreateEditForms.CreateEditPair.resources
+C:\Users\Iryna.Bokalo\Documents\111\UniversityDB\obj\Debug\UniversityDB.CreateEditForms.CreateEditPractice.resources
+C:\Users\Iryna.Bokalo\Documents\111\UniversityDB\obj\Debug\UniversityDB.CreateEditForms.CreateEditStudent.resources
+C:\Users\Iryna.Bokalo\Documents\111\UniversityDB\obj\Debug\UniversityDB.CreateEditForms.CreateEditSubject.resources
+C:\Users\Iryna.Bokalo\Documents\111\UniversityDB\obj\Debug\UniversityDB.CreateEditForms.CreateEditTeacher.resources

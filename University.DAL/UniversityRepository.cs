@@ -100,7 +100,7 @@ namespace University.DAL
             w.MajorId = obj.MajorId;
 
             _ctx.UniversityObjects.Add(w);
-          
+
             _ctx.SaveChanges();
 
             var sk = _ctx.UniversityObjects.ToList();
@@ -112,8 +112,8 @@ namespace University.DAL
             int id = CreateUniversityObject(obj, false);
             var human = _mapper.CreateMapper().Map<Human>(obj);
             human.Id = id;
-            human.Sealed = isSealed;          
-            _ctx.Humans.Add(human);         
+            human.Sealed = isSealed;
+            _ctx.Humans.Add(human);
             _ctx.SaveChanges();
             return id;
         }
@@ -121,9 +121,9 @@ namespace University.DAL
         private int CreateEntrant(EntrantViewModel entrant, bool isSealed)
         {
             int id = CreateHuman(entrant, false);
-          
-            _ctx.Entrants.Add(_mapper.CreateMapper().Map<Entrant>(entrant));
-            _mapper.CreateMapper().Map<Entrant>(entrant).Id = id;
+            var entrantmodel = _mapper.CreateMapper().Map<Entrant>(entrant);
+            entrantmodel.Id = id;
+            _ctx.Entrants.Add(entrantmodel);
             _ctx.SaveChanges();
             return id;
         }
@@ -131,8 +131,9 @@ namespace University.DAL
         private int CreateSubject(SubjectViewModel obj, bool isSealed)
         {
             int id = CreateUniversityObject(obj, false);
-         
-            _ctx.Subjects.Add(_mapper.CreateMapper().Map<Subject>(obj));
+            var sub = _mapper.CreateMapper().Map<Subject>(obj);
+            sub.Id = id;
+            _ctx.Subjects.Add(sub);
             _mapper.CreateMapper().Map<Subject>(obj).Id = id;
             _ctx.SaveChanges();
             return id;
@@ -141,8 +142,9 @@ namespace University.DAL
         private int CreateStudent(StudentViewModel entrant, bool isSealed)
         {
             int id = CreateHuman(entrant, false);
-          
-            _ctx.Students.Add(_mapper.CreateMapper().Map<Student>(entrant));
+            var student = _mapper.CreateMapper().Map<Student>(entrant);
+            student.Id = id;
+            _ctx.Students.Add(student);
             _mapper.CreateMapper().Map<Student>(entrant).Id = id;
             _ctx.SaveChanges();
             return id;
@@ -151,9 +153,9 @@ namespace University.DAL
         private int CreateGraduate(GraduateViewModel obj, bool isSealed)
         {
             int id = CreateStudent(obj, false);
-          
-            _ctx.Graduates.Add(_mapper.CreateMapper().Map<Graduate>(obj));
-            _mapper.CreateMapper().Map<Graduate>(obj).Id = id;
+            var grad = _mapper.CreateMapper().Map<Graduate>(obj);
+            grad.Id = id;
+            _ctx.Graduates.Add(grad);
             _ctx.SaveChanges();
             return id;
         }
@@ -161,9 +163,10 @@ namespace University.DAL
         private int CreateExcellentStudent(ExcellentStudentViewModel obj, bool isSealed)
         {
             int id = CreateStudent(obj, false);
-            _mapper.CreateMapper().Map<ExcellentStudent>(obj).Id = id;
-            _ctx.ExcellentStudents.Add(_mapper.CreateMapper().Map<ExcellentStudent>(obj));
-           
+            var exc = _mapper.CreateMapper().Map<ExcellentStudent>(obj);
+            exc.Id = id;
+            _ctx.ExcellentStudents.Add(exc);
+
             _ctx.SaveChanges();
             return id;
         }
@@ -171,9 +174,10 @@ namespace University.DAL
         private int CreateTeacher(TeacherViewModel entrant, bool isSealed)
         {
             int id = CreateHuman(entrant, false);
-            _mapper.CreateMapper().Map<Teacher>(entrant).Id = id;
-            _ctx.Teachers.Add(_mapper.CreateMapper().Map<Teacher>(entrant));
-            
+            var teacher = _mapper.CreateMapper().Map<Teacher>(entrant);
+            teacher.Id = id;
+            _ctx.Teachers.Add(teacher);
+
             _ctx.SaveChanges();
             return id;
         }
@@ -181,8 +185,9 @@ namespace University.DAL
         private int CreatePair(PairViewModel obj, bool isSealed)
         {
             int id = CreateUniversityObject(obj, false);
-            _mapper.CreateMapper().Map<Pair>(obj).Id = id;
-            _ctx.Pairs.Add(_mapper.CreateMapper().Map<Pair>(obj));
+            var pair = _mapper.CreateMapper().Map<Pair>(obj);
+            pair.Id = id;
+            _ctx.Pairs.Add(pair);
             _ctx.SaveChanges();
             return id;
         }
@@ -190,8 +195,9 @@ namespace University.DAL
         private int CreateLecture(PairViewModel obj, bool isSealed)
         {
             int id = CreatePair(obj, false);
-            _mapper.CreateMapper().Map<Lecture>(obj).Id = id;
-            _ctx.Lectures.Add(_mapper.CreateMapper().Map<Lecture>(obj));
+            var lecture = _mapper.CreateMapper().Map<Lecture>(obj);
+            lecture.Id = id;
+            _ctx.Lectures.Add(lecture);
             _ctx.SaveChanges();
             return id;
         }
@@ -199,8 +205,9 @@ namespace University.DAL
         private int CreatePractice(PracticeViewModel obj, bool isSealed)
         {
             int id = CreatePair(obj, false);
-            _mapper.CreateMapper().Map<Practice>(obj).Id = id;
-            _ctx.Practices.Add(_mapper.CreateMapper().Map<Practice>(obj));
+            var practice = _mapper.CreateMapper().Map<Practice>(obj);
+            practice.Id = id;
+            _ctx.Practices.Add(practice);
             _ctx.SaveChanges();
             return id;
         }
@@ -263,6 +270,117 @@ namespace University.DAL
         }
         #endregion
 
+        #region update
+        public void UpdateUObject(UniversityObjectViewModel uObj)
+        {
+            UniversityObject dbUObj = _ctx.UniversityObjects.First(o => o.Id == uObj.Id);
+            dbUObj.TypeName = uObj.TypeName;
+            dbUObj.LastWriteTime = DateTime.Now;
+
+            _ctx.SaveChanges();
+        }
+
+        public void UpdatePerson(HumanViewModel human)
+        {
+            Human dbPerson = _ctx.Humans.First(p => p.Id == human.Id);
+
+            dbPerson.Name = human.Name;
+            dbPerson.Surname = human.Surname;
+            dbPerson.Age = human.Age;
+
+            UpdateUObject(human);
+        }
+
+        public void UpdateStudent(StudentViewModel student)
+        {
+            Student dbStudent = _ctx.Students.First(s => s.Id == student.Id);
+
+            dbStudent.FavoriteSubject = student.FavoriteSubject;
+            dbStudent.MediumMark = student.MediumMark;
+
+            UpdatePerson(student);
+        }
+
+        public void UpdateEntrant(EntrantViewModel entrant)
+        {
+            Entrant dbEntrant = _ctx.Entrants.First(e => e.Id == entrant.Id);
+
+            dbEntrant.DesiredFaculty = entrant.DesiredFaculty;
+            dbEntrant.School = entrant.School;
+
+            UpdatePerson(entrant);
+        }
+
+        public void UpdateTeacher(TeacherViewModel teacher)
+        {
+            Teacher dbEntrant = _ctx.Teachers.First(e => e.Id == teacher.Id);
+
+            dbEntrant.Education = teacher.Education;
+
+            UpdatePerson(teacher);
+        }
+
+        public void UpdateSubject(SubjectViewModel subject)
+        {
+            Subject dbPerson = _ctx.Subjects.First(p => p.Id == subject.Id);
+
+            dbPerson.Description = subject.Description;
+            dbPerson.Name = subject.Name;
+
+            UpdateUObject(subject);
+        }
+
+        public void UpdateGraduate(GraduateViewModel graduate)
+        {
+            Graduate dbStudent = _ctx.Graduates.First(s => s.Id == graduate.Id);
+
+            dbStudent.YearOfGraduation = graduate.YearOfGraduation;
+
+
+            UpdateStudent(graduate);
+        }
+
+        public void UpdateExcellentStudent(ExcellentStudentViewModel graduate)
+        {
+            ExcellentStudent dbStudent = _ctx.ExcellentStudents.First(s => s.Id == graduate.Id);
+
+            dbStudent.ScholarShip = graduate.ScholarShip;
+
+
+            UpdateStudent(graduate);
+        }
+
+        public void UpdatePair(PairViewModel subject)
+        {
+            Pair dbPerson = _ctx.Pairs.First(p => p.Id == subject.Id);
+
+            dbPerson.DurationInMinutes = subject.DurationInMinutes;
+            dbPerson.RoomNumber = subject.RoomNumber;
+
+            UpdateUObject(subject);
+        }
+
+        public void UpdatePractice(PracticeViewModel subject)
+        {
+            Practice dbPerson = _ctx.Practices.First(p => p.Id == subject.Id);
+
+            dbPerson.PracticeTask = subject.PracticeTask;
+            dbPerson.HomeWork = subject.HomeWork;
+
+            UpdatePair(subject);
+        }
+
+        public void UpdateLecture(LectureViewModel subject)
+        {
+            Lecture dbPerson = _ctx.Lectures.First(p => p.Id == subject.Id);
+
+            dbPerson.TheoryInformation = subject.TheoryInformation;
+
+
+            UpdatePair(subject);
+        }
+
+        #endregion
         #region Get by ID
         public UniversityObjectViewModel GetUObjectById(int id)
         {
@@ -314,6 +432,8 @@ namespace University.DAL
             return GetLectures().First(o => o.Id == id);
         }
         #endregion
+
+
 
         #region GetUObjectsByMajor(int? major)
 
