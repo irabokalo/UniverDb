@@ -20,6 +20,13 @@ namespace UniversityDB.CreateEditForms
             InitializeComponent();
         }
 
+        public CreateEditObject(UniversityObjectViewModel Value)
+        {
+           this.Value = Value;
+            InitializeComponent();
+            uTitle.Text = Value.TypeName;
+        }
+
         private void saveUObject_Click(object sender, EventArgs e)
         {   
             Value.TypeName = uTitle.Text;

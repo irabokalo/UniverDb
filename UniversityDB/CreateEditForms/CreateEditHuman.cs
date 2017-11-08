@@ -13,6 +13,18 @@ namespace UniversityDB.CreateEditForms
             InitializeComponent();
         }
 
+        public CreateEditHuman(HumanViewModel Value)
+        {
+            InitializeComponent();
+            this.Value = Value;
+           
+
+            uTitle.Text = Value.TypeName;
+            name.Text = Value.Name;
+            surname.Text = Value.Surname;
+            age.Text = Value.Age.ToString();
+        }
+
         private void CreateEditHuman_Load(object sender, EventArgs e)
         {
             

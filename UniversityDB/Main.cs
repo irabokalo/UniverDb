@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using University.DAL;
 using University.DAL.Models;
 using UniversityDB.CreateEditForms;
+using UniversityDB.Details;
 
 namespace UniversityDB
 {
@@ -20,12 +21,13 @@ namespace UniversityDB
                 "Student",
                 "Entrant",
                 "Graduate",
-                "Teacher",
+                "Worker",
                 "Excellent Student",
-                "Teacher",
+                "Worker",
                 "Pair",
                 "Lecture",
-                "Practice"
+                "Practice",
+                "Room"
             };
 
         private ContextMenu contextMenu;
@@ -48,7 +50,7 @@ namespace UniversityDB
             //  InitializeComponent();
         }
 
-        private List<string> GetTypesOfEntities(string parentType)
+        private List<string> GetTypesOfEntities()
         {
             return TypesOfEntities;
         }
@@ -138,26 +140,34 @@ namespace UniversityDB
                     id = _repo.CreateSubject(SubjectWindow.Value);
                     title = SubjectWindow.Value.TypeName;
                     break;
+
+                case "Room":
+                    CreateEditRoom room = new CreateEditRoom();
+                    room.ShowDialog();
+                    room.Value.MajorId = majorId;
+                    id = _repo.CreateRoom(room.Value);
+                    title = room.Value.TypeName;
+                    break;
                 case "Student":
                     CreateEditStudent studentWindow = new CreateEditStudent();
                     studentWindow.ShowDialog();
                     studentWindow.Value.MajorId = majorId;
-                    id = _repo.CreateStudent(studentWindow.Value);          
+                    id = _repo.CreateStudent(studentWindow.Value);
                     title = studentWindow.Value.TypeName;
                     break;
                 case "Entrant":
                     CreateEditEntrant entrantWindow = new CreateEditEntrant();
                     entrantWindow.ShowDialog();
                     entrantWindow.Value.MajorId = majorId;
-                    id = _repo.CreateEntrant(entrantWindow.Value);               
+                    id = _repo.CreateEntrant(entrantWindow.Value);
                     title = entrantWindow.Value.TypeName;
                     break;
-                case "Teacher":
-                    CreateEditTeacher teacherWindow = new CreateEditTeacher();
-                    teacherWindow.ShowDialog();
-                    teacherWindow.Value.MajorId = majorId;
-                    id = _repo.CreateTeacher(teacherWindow.Value);
-                    title = teacherWindow.Value.TypeName;
+                case "Worker":
+                    CreateEditWorker WorkerWindow = new CreateEditWorker();
+                    WorkerWindow.ShowDialog();
+                    WorkerWindow.Value.MajorId = majorId;
+                    id = _repo.CreateWorker(WorkerWindow.Value);
+                    title = WorkerWindow.Value.TypeName;
                     break;
                 case "Pair":
                     CreateEditPair pairWindow = new CreateEditPair();
@@ -215,29 +225,236 @@ namespace UniversityDB
             switch (type)
             {
 
+                case "University Object":
+                    ShowObject uObjWnd = new ShowObject(_repo.GetUObjectById(id));
+                    uObjWnd.ShowDialog();
+                    break;
+                case "Human":
+                    ShowHuman personWnd = new ShowHuman(_repo.GetHumanById(id));
+                    personWnd.ShowDialog();
+                    break;
+                case "Subject":
+                    ShowSubject workerWnd = new ShowSubject(_repo.GetSubjectById(id));
+                    workerWnd.ShowDialog();
+                    break;
+                case "Worker":
+                    ShowWorker WorkerWnd = new ShowWorker(_repo.GetWorkerById(id));
+                    WorkerWnd.ShowDialog();
+                    break;
+                case "Graduate":
+                    ShowGraduate graduateWnd = new ShowGraduate(_repo.GetGraduateById(id));
+                    graduateWnd.ShowDialog();
+                    break;
+                case "Entrant":
+                    ShowEntrant entrantWnd = new ShowEntrant(_repo.GetEntrantById(id));
+                    entrantWnd.ShowDialog();
+                    break;
+                case "Student":
+                    ShowStudent studentWnd = new ShowStudent(_repo.GetStudentById(id));
+                    studentWnd.ShowDialog();
+                    break;
+                case "Pair":
+                    ShowPair pairWnd = new ShowPair(_repo.GetPairById(id));
+                    pairWnd.ShowDialog();
+                    break;
+                case "Practice":
+                    ShowPractice practiceWnd = new ShowPractice(_repo.GetPracticeById(id));
+                    practiceWnd.ShowDialog();
+                    break;
+                case "Lecture":
+                    ShowLecture lectureWnd = new ShowLecture(_repo.GetLectureById(id));
+                    lectureWnd.ShowDialog();
+                    break;
+                case "Room":
+                    ShowRoom room = new ShowRoom(_repo.GetRoomById(id));
+                    room.ShowDialog();
+                    break;
+                case "Excellent Student":
+                    ShowExcellentStudent fStudentWnd = new ShowExcellentStudent(_repo.GetExcellentStudentById(id));
+                    fStudentWnd.ShowDialog();
+                    break;
+                default:
+                    throw new ArgumentException();
             }
         }
+        
 
         private void Edit(string type, int id)
         {
+            switch (type)
+            {
+                case "University Object":
+                    CreateEditObject uObjWindow = new CreateEditObject(_repo.GetUObjectById(id));
+                    if (uObjWindow.ShowDialog() == DialogResult.OK)
+                    {
+                        _repo.UpdateUObject(uObjWindow.Value);
+                        tree.SelectedNode.Text = uObjWindow.Value.TypeName;
+                    }
+                    break;
+                case "Human":
+                    CreateEditHuman personWindow = new CreateEditHuman(_repo.GetHumanById(id));
+                    personWindow.ShowDialog();
 
+                    _repo.UpdatePerson(personWindow.Value);
+                    tree.SelectedNode.Text = personWindow.Value.TypeName;
+
+                    break;
+
+                case "Room":
+                    CreateEditRoom roomWindow = new CreateEditRoom(_repo.GetRoomById(id));
+                    roomWindow.ShowDialog();
+                    _repo.UpdateRoom(roomWindow.Value);
+                    tree.SelectedNode.Text = roomWindow.Value.TypeName;
+
+                    break;
+                case "Subject":
+                    CreateEditSubject workerWindow = new CreateEditSubject(_repo.GetSubjectById(id));
+                    workerWindow.ShowDialog();
+                    _repo.UpdateSubject(workerWindow.Value);
+                    tree.SelectedNode.Text = workerWindow.Value.TypeName;
+
+                    break;
+                case "Worker":
+                    CreateEditWorker WorkerWindow = new CreateEditWorker(_repo.GetWorkerById(id));
+                    WorkerWindow.ShowDialog();
+
+                    _repo.UpdateWorker(WorkerWindow.Value);
+                    tree.SelectedNode.Text = WorkerWindow.Value.TypeName;
+
+                    break;
+                case "Entrant":
+                    CreateEditEntrant entrantWindow = new CreateEditEntrant(_repo.GetEntrantById(id));
+                    entrantWindow.ShowDialog();
+
+                    _repo.UpdateEntrant(entrantWindow.Value);
+                    tree.SelectedNode.Text = entrantWindow.Value.TypeName;
+
+                    break;
+                case "Graduate":
+                    CreateEditGraduate graduateWindow = new CreateEditGraduate(_repo.GetGraduateById(id));
+                    graduateWindow.ShowDialog();
+                    _repo.UpdateGraduate(graduateWindow.Value);
+                    tree.SelectedNode.Text = graduateWindow.Value.TypeName;
+
+                    break;
+
+                case "Student":
+                    CreateEditStudent studentWindow = new CreateEditStudent(_repo.GetStudentById(id));
+                    studentWindow.ShowDialog();
+                    _repo.UpdateStudent(studentWindow.Value);
+                    tree.SelectedNode.Text = studentWindow.Value.TypeName;
+
+                    break;
+
+                case "Pair":
+                    CreateEditPair pairWindow = new CreateEditPair(_repo.GetPairById(id));
+                    pairWindow.ShowDialog();
+                    _repo.UpdatePair(pairWindow.Value);
+                    tree.SelectedNode.Text = pairWindow.Value.TypeName;
+                    break;
+
+                case "Practice":
+                    CreateEditPractice practiceWindow = new CreateEditPractice(_repo.GetPracticeById(id));
+                    practiceWindow.ShowDialog();
+                    _repo.UpdatePractice(practiceWindow.Value);
+                    tree.SelectedNode.Text = practiceWindow.Value.TypeName;
+                    break;
+
+                case "Lecture":
+                    CreateEditLecture lectureWindow = new CreateEditLecture(_repo.GetLectureById(id));
+                    lectureWindow.ShowDialog();
+                    _repo.UpdateLecture(lectureWindow.Value);
+                    tree.SelectedNode.Text = lectureWindow.Value.TypeName;
+                    break;
+
+                case "Excellent Student":
+                    CreateEditExcellentStudent foreignStudentWindow = new CreateEditExcellentStudent(_repo.GetExcellentStudentById(id));
+                    foreignStudentWindow.ShowDialog();
+                    _repo.UpdateExcellentStudent(foreignStudentWindow.Value);
+                    tree.SelectedNode.Text = foreignStudentWindow.Value.TypeName;
+                    break;
+
+                default:
+                    throw new ArgumentException();
+            }
+        }
+
+        private void Delete(string type, int id)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want delete the object?",
+                "Delete object", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes)
+            {
+                switch (type)
+                {
+                    case "University Object":
+                        _repo.DeleteUObject(id);
+                        break;
+                    case "Subject":
+                        _repo.DeleteSubject(id);
+                        break;
+                    case "Human":
+                        _repo.DeletePerson(id);
+                        break;
+                    case "Student":
+                        _repo.DeleteStudent(id);
+                        break;
+                    case "Entrant":
+                        _repo.DeleteEntrant(id);
+                        break;
+                    case "Worker":                      
+                        _repo.DeleteWorker(id);
+                        break;
+                    case "Excellent Student":
+                        _repo.DeleteExcellentStudent(id);
+                        break;
+                    case "Graduate":
+                        _repo.DeleteGraduate(id);
+                        break;
+                    case "Pair":
+                        _repo.DeletePair(id);
+                        break;
+                    case "Lecture":
+                        _repo.DeleteLecture(id);
+                        break;
+                    case "Practice":
+                        _repo.DeletePractice(id);
+                        break;
+                    case "Room":
+                        _repo.DeleteRoom(id);
+                        break;
+                    default:
+                        throw new ArgumentException();
+                }
+
+                foreach (KeyValuePair<string, IEnumerable<UniversityObjectViewModel>> pair in _repo.GetAllObjectsByMajor(id))
+                {
+                    foreach (UniversityObjectViewModel uobj in pair.Value)
+                    {
+                        uobj.MajorId = null;
+                        _repo.UpdateUObject(uobj);
+                        TreeNode node = tree.Nodes.Add(uobj.TypeName); // Зміни не відображаються. Чомусь.
+                        node.Tag = new NodeInfo { Id = uobj.Id, Type = pair.Key, Expanded = false };
+                    }
+                }
+
+                tree.SelectedNode.Remove();
+            }
         }
 
         private void add_Click(object sender, EventArgs e)
         {
-            Select window = new Select(GetTypesOfEntities("root"));
-
+            Select window = new Select(GetTypesOfEntities());
             window.ShowDialog();
             Create(window.SelectedType, null);
-
-
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
             NodeInfo info = (NodeInfo)tree.SelectedNode.Tag;
 
-            Select window = new Select(GetTypesOfEntities(info.Type));
+            Select window = new Select(GetTypesOfEntities());
 
             window.ShowDialog();
             Create(window.SelectedType, tree.SelectedNode);
@@ -259,9 +476,8 @@ namespace UniversityDB
         private void btnDelete_Click(object sender, EventArgs e)
         {
             NodeInfo info = (NodeInfo)tree.SelectedNode.Tag;
-            //  Delete(info.Type, info.Id);
+            Delete(info.Type, info.Id);
         }
-
 
     }
 

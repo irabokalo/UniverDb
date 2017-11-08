@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace University.DAL.Models
 {
-    public class TeacherViewModel : HumanViewModel
+    public class WorkerViewModel : HumanViewModel
     {
         public string Education { get; set; }
     }

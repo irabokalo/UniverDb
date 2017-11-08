@@ -1,6 +1,6 @@
 ﻿namespace UniversityDB.CreateEditForms
 {
-    partial class CreateEditTeacher
+    partial class CreateEditWorker
     {
         /// <summary>
         /// Required designer variable.
@@ -154,7 +154,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(47, 13);
             this.label7.TabIndex = 28;
-            this.label7.Text = "Teacher";
+            this.label7.Text = "Worker";
             // 
             // Education
             // 
@@ -172,7 +172,7 @@
             this.texc.TabIndex = 29;
             this.texc.Text = "Education";
             // 
-            // CreateEditTeacher
+            // CreateEditWorker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -192,8 +192,8 @@
             this.Controls.Add(this.saveUObject);
             this.Controls.Add(this.uTitle);
             this.Controls.Add(this.label1);
-            this.Name = "CreateEditTeacher";
-            this.Text = "CreateEditTeacher";
+            this.Name = "CreateEditWorker";
+            this.Text = "CreateEditWorker";
             this.ResumeLayout(false);
             this.PerformLayout();
 

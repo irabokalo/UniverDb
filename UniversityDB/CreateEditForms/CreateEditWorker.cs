@@ -4,15 +4,25 @@ using University.DAL.Models;
 
 namespace UniversityDB.CreateEditForms
 {
-    public partial class CreateEditTeacher : Form
+    public partial class CreateEditWorker : Form
     {
-        public TeacherViewModel Value { get; set; }
+        public WorkerViewModel Value { get; set; }
 
-        public CreateEditTeacher()
-            
+        public CreateEditWorker()           
         {
-            Value = new TeacherViewModel();
+            Value = new WorkerViewModel();
             InitializeComponent();
+        }
+
+        public CreateEditWorker(WorkerViewModel Value)
+        {
+            this.Value = Value;
+            InitializeComponent();
+            uTitle.Text = Value.TypeName;
+            name.Text = Value.Name;
+            surname.Text = Value.Surname;
+            age.Text = Value.Age.ToString();
+            Education.Text = Value.Education;
         }
 
         private void saveUObject_Click(object sender, EventArgs e)

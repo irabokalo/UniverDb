@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using University.DAL.Models;
+using University.DAL.ViewModels;
 
 namespace University.DAL
 {
@@ -24,6 +25,12 @@ namespace University.DAL
         {
             return _ctx.UniversityObjects
                 .Where(o => o.Sealed).ProjectTo<UniversityObjectViewModel>(_mapper).ToList();
+        }
+
+        private List<RoomViewModel> GetRooms()
+        {
+            return _ctx.Rooms
+                .Where(o => o.Sealed).ProjectTo<RoomViewModel>(_mapper).ToList();
         }
 
         private List<EntrantViewModel> GetEntrants()
@@ -80,38 +87,42 @@ namespace University.DAL
                 .Where(o => o.Sealed).ProjectTo<SubjectViewModel>(_mapper).ToList();
         }
 
-        private List<TeacherViewModel> GetTeachers()
+        private List<WorkerViewModel> GetWorkers()
         {
-            return _ctx.Teachers
-                .Where(o => o.Sealed).ProjectTo<TeacherViewModel>(_mapper).ToList();
+            return _ctx.Workers
+                .Where(o => o.Sealed).ProjectTo<WorkerViewModel>(_mapper).ToList();
         }
 
 
         #endregion
-
         #region inner create
-        private int CreateUniversityObject(UniversityObjectViewModel obj, bool isSealed)
+        private int CreateUniversityObject(UniversityObjectViewModel uobj, bool isSealed)
         {
-            obj.CreationTime = DateTime.Now;
-            obj.LastWriteTime = DateTime.Now;
+            uobj.CreationTime = DateTime.Now;
+            uobj.LastWriteTime = DateTime.Now;
 
-            var w = _mapper.CreateMapper().Map<UniversityObject>(obj);
-            w.Sealed = isSealed;
-            w.MajorId = obj.MajorId;
+            UniversityObject dbUObj = new UniversityObject
+            {
+                CreationTime = uobj.CreationTime,
+                LastWriteTime = uobj.LastWriteTime,
+                MajorId = uobj.MajorId,
+                TypeName = uobj.TypeName,
+                Sealed = isSealed
+            };
 
-            _ctx.UniversityObjects.Add(w);
-
+            _ctx.UniversityObjects.Add(dbUObj);
             _ctx.SaveChanges();
 
-            var sk = _ctx.UniversityObjects.ToList();
-            return sk.Last().Id;
+            uobj.Id = dbUObj.Id;
+            return dbUObj.Id;
         }
 
         private int CreateHuman(HumanViewModel obj, bool isSealed)
         {
             int id = CreateUniversityObject(obj, false);
+            obj.Id = id;
             var human = _mapper.CreateMapper().Map<Human>(obj);
-            human.Id = id;
+
             human.Sealed = isSealed;
             _ctx.Humans.Add(human);
             _ctx.SaveChanges();
@@ -135,6 +146,17 @@ namespace University.DAL
             sub.Id = id;
             _ctx.Subjects.Add(sub);
             _mapper.CreateMapper().Map<Subject>(obj).Id = id;
+            _ctx.SaveChanges();
+            return id;
+        }
+
+        private int CreateRoom(RoomViewModel obj, bool isSealed)
+        {
+            int id = CreateUniversityObject(obj, false);
+            var sub = _mapper.CreateMapper().Map<Room>(obj);
+            sub.Id = id;
+            _ctx.Rooms.Add(sub);
+            _mapper.CreateMapper().Map<Room>(obj).Id = id;
             _ctx.SaveChanges();
             return id;
         }
@@ -171,12 +193,12 @@ namespace University.DAL
             return id;
         }
 
-        private int CreateTeacher(TeacherViewModel entrant, bool isSealed)
+        private int CreateWorker(WorkerViewModel entrant, bool isSealed)
         {
             int id = CreateHuman(entrant, false);
-            var teacher = _mapper.CreateMapper().Map<Teacher>(entrant);
-            teacher.Id = id;
-            _ctx.Teachers.Add(teacher);
+            var Worker = _mapper.CreateMapper().Map<Worker>(entrant);
+            Worker.Id = id;
+            _ctx.Workers.Add(Worker);
 
             _ctx.SaveChanges();
             return id;
@@ -212,7 +234,119 @@ namespace University.DAL
             return id;
         }
         #endregion
+        #region Delete
+        public void DeleteUObject(int id)
+        {
+            UniversityObject forRemove = _ctx.UniversityObjects.First(o => o.Id == id);
 
+            _ctx.UniversityObjects.Remove(forRemove);
+
+            _ctx.SaveChanges();
+        }
+
+        public void DeletePerson(int id)
+        {
+            Human forRemove = _ctx.Humans.First(p => p.Id == id);
+
+            _ctx.Humans.Remove(forRemove);
+
+            DeleteUObject(id);
+        }
+
+        public void DeleteSubject(int id)
+        {
+            Subject forRemove = _ctx.Subjects.First(p => p.Id == id);
+
+            _ctx.Subjects.Remove(forRemove);
+
+            DeleteUObject(id);
+        }
+
+        public void DeleteRoom(int id)
+        {
+            Room forRemove = _ctx.Rooms.First(p => p.Id == id);
+
+            _ctx.Rooms.Remove(forRemove);
+
+            DeleteUObject(id);
+        }
+
+        public void DeleteStudent(int id)
+        {
+            Student forRemove = _ctx.Students.First(p => p.Id == id);
+
+            _ctx.Students.Remove(forRemove);
+
+            DeletePerson(id);
+        }
+
+
+        public void DeleteEntrant(int id)
+        {
+            Entrant forRemove = _ctx.Entrants.First(p => p.Id == id);
+
+            _ctx.Entrants.Remove(forRemove);
+
+            DeletePerson(id);
+        }
+
+
+        public void DeleteWorker(int id)
+        {
+            Worker forRemove = _ctx.Workers.First(p => p.Id == id);
+
+            _ctx.Workers.Remove(forRemove);
+
+            DeletePerson(id);
+        }
+
+        public void DeletePair(int id)
+        {
+            Pair forRemove = _ctx.Pairs.First(p => p.Id == id);
+
+            _ctx.Pairs.Remove(forRemove);
+
+            DeleteUObject(id);
+        }
+
+        public void DeleteGraduate(int id)
+        {
+            Graduate forRemove = _ctx.Graduates.First(p => p.Id == id);
+
+            _ctx.Graduates.Remove(forRemove);
+
+            DeleteStudent(id);
+        }
+
+        public void DeleteExcellentStudent(int id)
+        {
+            ExcellentStudent forRemove = _ctx.ExcellentStudents.First(p => p.Id == id);
+
+            _ctx.ExcellentStudents.Remove(forRemove);
+
+            DeleteStudent(id);
+        }
+
+        public void DeletePractice(int id)
+        {
+            Practice forRemove = _ctx.Practices.First(p => p.Id == id);
+
+            _ctx.Practices.Remove(forRemove);
+
+            DeletePair(id);
+        }
+
+        public void DeleteLecture(int id)
+        {
+            Lecture forRemove = _ctx.Lectures.First(p => p.Id == id);
+
+            _ctx.Lectures.Remove(forRemove);
+
+            DeletePair(id);
+        }
+
+
+        #endregion
         #region Create
         public int CreateUniversityObject(UniversityObjectViewModel obj)
         {
@@ -224,9 +358,14 @@ namespace University.DAL
             return CreateSubject(obj, true);
         }
 
-        public int CreateTeacher(TeacherViewModel obj)
+        public int CreateRoom(RoomViewModel obj)
         {
-            return CreateTeacher(obj, true);
+            return CreateRoom(obj, true);
+        }
+
+        public int CreateWorker(WorkerViewModel obj)
+        {
+            return CreateWorker(obj, true);
         }
 
         public int CreateEntrant(EntrantViewModel obj)
@@ -269,7 +408,6 @@ namespace University.DAL
             return CreatePractice(obj, true);
         }
         #endregion
-
         #region update
         public void UpdateUObject(UniversityObjectViewModel uObj)
         {
@@ -311,13 +449,13 @@ namespace University.DAL
             UpdatePerson(entrant);
         }
 
-        public void UpdateTeacher(TeacherViewModel teacher)
+        public void UpdateWorker(WorkerViewModel Worker)
         {
-            Teacher dbEntrant = _ctx.Teachers.First(e => e.Id == teacher.Id);
+            Worker dbEntrant = _ctx.Workers.First(e => e.Id == Worker.Id);
 
-            dbEntrant.Education = teacher.Education;
+            dbEntrant.Education = Worker.Education;
 
-            UpdatePerson(teacher);
+            UpdatePerson(Worker);
         }
 
         public void UpdateSubject(SubjectViewModel subject)
@@ -326,6 +464,15 @@ namespace University.DAL
 
             dbPerson.Description = subject.Description;
             dbPerson.Name = subject.Name;
+
+            UpdateUObject(subject);
+        }
+
+        public void UpdateRoom(RoomViewModel subject)
+        {
+            Room dbPerson = _ctx.Rooms.First(p => p.Id == subject.Id);
+
+            dbPerson.Number = subject.Number;
 
             UpdateUObject(subject);
         }
@@ -384,57 +531,63 @@ namespace University.DAL
         #region Get by ID
         public UniversityObjectViewModel GetUObjectById(int id)
         {
-            return GetUniversityObjects().First(o => o.Id == id);
+            return _mapper.CreateMapper().Map<UniversityObjectViewModel>(_ctx.UniversityObjects.First(o => o.Id == id));
         }
 
         public SubjectViewModel GetSubjectById(int id)
         {
-            return GetSubjects().First(o => o.Id == id);
+            return _mapper.CreateMapper().Map<SubjectViewModel>(_ctx.Subjects.First(o => o.Id == id));
         }
 
+        public RoomViewModel GetRoomById(int id)
+        {
+            return _mapper.CreateMapper().Map<RoomViewModel>(_ctx.Subjects.First(o => o.Id == id));
+        }
+
+        public WorkerViewModel GetWorkerById(int id)
+        {
+            return _mapper.CreateMapper().Map<WorkerViewModel>(_ctx.Workers.First(o => o.Id == id));
+        }
         public StudentViewModel GetStudentById(int id)
         {
-            return GetStudents().First(o => o.Id == id);
+            return _mapper.CreateMapper().Map<StudentViewModel>(_ctx.Students.First(o => o.Id == id));
         }
 
         public EntrantViewModel GetEntrantById(int id)
         {
-            return GetEntrants().First(o => o.Id == id);
+            return _mapper.CreateMapper().Map<EntrantViewModel>(_ctx.Entrants.First(o => o.Id == id));
         }
 
         public HumanViewModel GetHumanById(int id)
         {
-            return GetHumans().First(o => o.Id == id);
+            return _mapper.CreateMapper().Map<HumanViewModel>(_ctx.Humans.First(o => o.Id == id));
         }
 
         public GraduateViewModel GetGraduateById(int id)
         {
-            return GetGraduates().First(o => o.Id == id);
+            return _mapper.CreateMapper().Map<GraduateViewModel>(_ctx.Graduates.First(o => o.Id == id));
         }
 
         public ExcellentStudentViewModel GetExcellentStudentById(int id)
         {
-            return GetExcellentStudents().First(o => o.Id == id);
+            return _mapper.CreateMapper().Map<ExcellentStudentViewModel>(_ctx.ExcellentStudents.First(o => o.Id == id));
         }
 
         public PairViewModel GetPairById(int id)
         {
-            return GetPairs().First(o => o.Id == id);
+            return _mapper.CreateMapper().Map<PairViewModel>(_ctx.Pairs.First(o => o.Id == id));
         }
 
         public PracticeViewModel GetPracticeById(int id)
         {
-            return GetPractices().First(o => o.Id == id);
+            return _mapper.CreateMapper().Map<PracticeViewModel>(_ctx.Practices.First(o => o.Id == id));
         }
 
         public LectureViewModel GetLectureById(int id)
         {
-            return GetLectures().First(o => o.Id == id);
+            return _mapper.CreateMapper().Map<LectureViewModel>(_ctx.Lectures.First(o => o.Id == id));
         }
         #endregion
-
-
-
         #region GetUObjectsByMajor(int? major)
 
         public IEnumerable<UniversityObjectViewModel> GetUObjectsByMajor(int? major)
@@ -445,6 +598,11 @@ namespace University.DAL
         public IEnumerable<SubjectViewModel> GetBySubjectMajor(int? major)
         {
             return GetSubjects().Where(o => o.MajorId == major);
+        }
+
+        public IEnumerable<RoomViewModel> GetByRoomMajor(int? major)
+        {
+            return GetRooms().Where(o => o.MajorId == major);
         }
 
         public IEnumerable<HumanViewModel> GetByHumanMajor(int? major)
@@ -488,9 +646,9 @@ namespace University.DAL
             return GetPractices().Where(o => o.MajorId == major);
         }
 
-        public IEnumerable<TeacherViewModel> GetByTeacherMajor(int? major)
+        public IEnumerable<WorkerViewModel> GetByWorkerMajor(int? major)
         {
-            return GetTeachers().Where(o => o.MajorId == major);
+            return GetWorkers().Where(o => o.MajorId == major);
         }
 
 
@@ -504,7 +662,7 @@ namespace University.DAL
             dictionary.Add("Subject", GetBySubjectMajor(major));
             dictionary.Add("Graduate", GetByGraduateMajor(major));
             dictionary.Add("Excellent Student", GetByExcellentStudentMajor(major));
-            dictionary.Add("Teacher", GetByTeacherMajor(major));
+            dictionary.Add("Worker", GetByWorkerMajor(major));
             dictionary.Add("Pair", GetByPairMajor(major));
             dictionary.Add("Practice", GetByPracticeMajor(major));
             dictionary.Add("Lecture", GetByLectureMajor(major));

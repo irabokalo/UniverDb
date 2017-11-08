@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace University.DAL.Models
 {
-    public class Teacher //: Human
+    public class Worker //: Human
     {
         [Key, ForeignKey("UniversityObject")]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]

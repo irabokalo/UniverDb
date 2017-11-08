@@ -14,6 +14,19 @@ namespace UniversityDB.CreateEditForms
             InitializeComponent();
         }
 
+
+        public CreateEditPractice(PracticeViewModel Value)
+        {
+            this.Value = Value;
+            InitializeComponent();
+
+            uTitle.Text = Value.TypeName;
+            duration.Text = Value.DurationInMinutes.ToString();
+            room.Text = Value.RoomNumber.ToString();
+            practice.Text = Value.PracticeTask;
+            homework.Text = Value.HomeWork;
+        }
+
         private void saveUObject_Click(object sender, EventArgs e)
         {
             Value.TypeName = uTitle.Text;

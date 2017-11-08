@@ -61,6 +61,7 @@
     <Compile Include="Models\Lecture.cs" />
     <Compile Include="Models\Pair.cs" />
     <Compile Include="Models\Practice.cs" />
+    <Compile Include="Models\Room.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Models\Subject.cs" />
     <Compile Include="Models\Teacher.cs" />
@@ -76,6 +77,7 @@
     <Compile Include="ViewModels\LectureViewModel.cs" />
     <Compile Include="ViewModels\PairViewModel.cs" />
     <Compile Include="ViewModels\PracticeViewModel.cs" />
+    <Compile Include="ViewModels\RoomViewModel.cs" />
     <Compile Include="ViewModels\StudentViewModel.cs" />
     <Compile Include="ViewModels\SubjectViewModel.cs" />
     <Compile Include="ViewModels\TeacherViewModel.cs" />

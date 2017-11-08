@@ -20,6 +20,16 @@ namespace UniversityDB.CreateEditForms
             InitializeComponent();
         }
 
+        public CreateEditPair(PairViewModel Value)
+        {
+            this.Value = Value;
+            InitializeComponent();
+
+            uTitle.Text = Value.TypeName;
+            duration.Text = Value.DurationInMinutes.ToString();
+            room.Text = Value.RoomNumber.ToString();
+        }
+
         private void saveUObject_Click(object sender, EventArgs e)
         {
             Value.TypeName = uTitle.Text;

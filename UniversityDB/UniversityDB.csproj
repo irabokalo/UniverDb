@@ -103,6 +103,12 @@
     <Compile Include="CreateEditForms\CreateEditPractice.Designer.cs">
       <DependentUpon>CreateEditPractice.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreateEditForms\CreateEditRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateEditForms\CreateEditRoom.Designer.cs">
+      <DependentUpon>CreateEditRoom.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreateEditForms\CreateEditStudent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,11 +121,83 @@
     <Compile Include="CreateEditForms\CreateEditSubject.Designer.cs">
       <DependentUpon>CreateEditSubject.cs</DependentUpon>
     </Compile>
-    <Compile Include="CreateEditForms\CreateEditTeacher.cs">
+    <Compile Include="CreateEditForms\CreateEditWorker.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreateEditForms\CreateEditTeacher.Designer.cs">
-      <DependentUpon>CreateEditTeacher.cs</DependentUpon>
+    <Compile Include="CreateEditForms\CreateEditWorker.Designer.cs">
+      <DependentUpon>CreateEditWorker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Details\ShowEntrant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Details\ShowEntrant.Designer.cs">
+      <DependentUpon>ShowEntrant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Details\ShowExcellentStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Details\ShowExcellentStudent.Designer.cs">
+      <DependentUpon>ShowExcellentStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Details\ShowGraduate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Details\ShowGraduate.Designer.cs">
+      <DependentUpon>ShowGraduate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Details\ShowHuman.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Details\ShowHuman.Designer.cs">
+      <DependentUpon>ShowHuman.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Details\ShowLecture.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Details\ShowLecture.Designer.cs">
+      <DependentUpon>ShowLecture.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Details\ShowObject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Details\ShowObject.Designer.cs">
+      <DependentUpon>ShowObject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Details\ShowPair.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Details\ShowPair.Designer.cs">
+      <DependentUpon>ShowPair.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Details\ShowPractice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Details\ShowPractice.Designer.cs">
+      <DependentUpon>ShowPractice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Details\ShowRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Details\ShowRoom.Designer.cs">
+      <DependentUpon>ShowRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Details\ShowStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Details\ShowStudent.Designer.cs">
+      <DependentUpon>ShowStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Details\ShowSubject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Details\ShowSubject.Designer.cs">
+      <DependentUpon>ShowSubject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Details\ShowWorker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Details\ShowWorker.Designer.cs">
+      <DependentUpon>ShowWorker.cs</DependentUpon>
     </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -159,14 +237,53 @@
     <EmbeddedResource Include="CreateEditForms\CreateEditPractice.resx">
       <DependentUpon>CreateEditPractice.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CreateEditForms\CreateEditRoom.resx">
+      <DependentUpon>CreateEditRoom.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateEditForms\CreateEditStudent.resx">
       <DependentUpon>CreateEditStudent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreateEditForms\CreateEditSubject.resx">
       <DependentUpon>CreateEditSubject.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CreateEditForms\CreateEditTeacher.resx">
-      <DependentUpon>CreateEditTeacher.cs</DependentUpon>
+    <EmbeddedResource Include="CreateEditForms\CreateEditWorker.resx">
+      <DependentUpon>CreateEditWorker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Details\ShowEntrant.resx">
+      <DependentUpon>ShowEntrant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Details\ShowExcellentStudent.resx">
+      <DependentUpon>ShowExcellentStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Details\ShowGraduate.resx">
+      <DependentUpon>ShowGraduate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Details\ShowHuman.resx">
+      <DependentUpon>ShowHuman.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Details\ShowLecture.resx">
+      <DependentUpon>ShowLecture.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Details\ShowObject.resx">
+      <DependentUpon>ShowObject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Details\ShowPair.resx">
+      <DependentUpon>ShowPair.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Details\ShowPractice.resx">
+      <DependentUpon>ShowPractice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Details\ShowRoom.resx">
+      <DependentUpon>ShowRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Details\ShowStudent.resx">
+      <DependentUpon>ShowStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Details\ShowSubject.resx">
+      <DependentUpon>ShowSubject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Details\ShowWorker.resx">
+      <DependentUpon>ShowWorker.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>

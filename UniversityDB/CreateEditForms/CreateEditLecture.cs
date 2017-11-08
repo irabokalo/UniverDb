@@ -20,6 +20,17 @@ namespace UniversityDB.CreateEditForms
             Value = new LectureViewModel();
         }
 
+        public CreateEditLecture(LectureViewModel Value)
+        {
+            this.Value = Value;
+            InitializeComponent();
+
+            uTitle.Text = Value.TypeName;
+            duration.Text = Value.DurationInMinutes.ToString();
+            room.Text = Value.RoomNumber.ToString();
+            theory.Text = Value.TheoryInformation;
+        }
+
         private void saveUObject_Click(object sender, EventArgs e)
         {
             Value.TypeName = uTitle.Text;

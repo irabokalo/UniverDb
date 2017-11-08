@@ -1,6 +1,7 @@
 ﻿
 using AutoMapper;
 using University.DAL.Models;
+using University.DAL.ViewModels;
 
 namespace University.DAL
 {
@@ -36,8 +37,11 @@ namespace University.DAL
                 cfg.CreateMap<SubjectViewModel, Subject>();
                 cfg.CreateMap<Subject, SubjectViewModel>();
 
-                cfg.CreateMap<TeacherViewModel, Teacher>();
-                cfg.CreateMap<Teacher, TeacherViewModel>();
+                cfg.CreateMap<WorkerViewModel, Worker>();
+                cfg.CreateMap<Worker, WorkerViewModel>();
+
+                cfg.CreateMap<RoomViewModel, Room>();
+                cfg.CreateMap<Room, RoomViewModel>();
 
                 cfg.CreateMap<UniversityObject, UniversityObjectViewModel>();
                 cfg.CreateMap<UniversityObjectViewModel, UniversityObject>();

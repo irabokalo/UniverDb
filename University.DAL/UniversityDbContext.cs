@@ -23,6 +23,7 @@ namespace University.DAL
         public DbSet<Practice> Practices { get; set; }
         public DbSet<Student> Students { get; set; }
         public DbSet<Subject> Subjects { get; set; }
-        public DbSet<Teacher> Teachers { get; set; }
+        public DbSet<Worker> Workers { get; set; }
+        public DbSet<Room> Rooms { get; set; }
     }
 }

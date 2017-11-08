@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using University.DAL.Models;
 
@@ -18,6 +11,20 @@ namespace UniversityDB.CreateEditForms
         {
             Value = new ExcellentStudentViewModel();
             InitializeComponent();
+        }
+
+        public CreateEditExcellentStudent(ExcellentStudentViewModel Value)
+        {
+            this.Value = Value;
+            InitializeComponent();
+
+            uTitle.Text = Value.TypeName;
+            name.Text = Value.Name;
+            surname.Text = Value.Surname;
+            age.Text = Value.Age.ToString();
+            favoriteSubject.Text = Value.FavoriteSubject;
+            mediumMark.Text = Value.MediumMark.ToString();
+            scolarship.Text = Value.ScholarShip.ToString();
         }
 
         private void saveUObject_Click_1(object sender, EventArgs e)
